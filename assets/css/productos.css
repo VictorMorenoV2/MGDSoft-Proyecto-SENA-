@@ -1,0 +1,305 @@
+.side-toggle{
+    transform: translateX(35px) translateY(10px);
+}
+
+.cartica{
+    padding-top: 20px;
+    width: 1180px;
+    padding-left: 30px;
+}
+
+.contenedorCarta{
+    height: 310px;
+    width: 220px;
+    max-width: 220px;
+    max-height: 310px;
+    box-shadow: 0 0 7px #111;
+    margin: 0 30px;
+   margin-bottom: 20px;
+   display: inline-block;
+}
+
+.contenedorCarta .Cartas{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 70px;
+    
+}
+
+.Cartas img{
+   padding-top: 10px;
+   margin-left: 10px;
+   margin-right: 10px;
+    
+    width: 200px;
+    height: 165px;
+    display: block;
+
+}
+
+.contenedorCarta{
+    background-color: rgb(255, 255, 255);
+}
+.infoCarta{
+    padding-top: 10px;
+    height: 60px;
+    width: 100%;
+}
+.infoCarta h1{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.infoCarta p{
+    
+    text-align: center;
+    font-family: sans-serif;
+    font-size: .9rem;
+    color: #555;
+}
+
+.precioCarta{
+
+    height: 50px;
+    width: 85%;
+    margin: auto;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boxPrecio{
+    width: 80px;
+    
+}
+
+.precio1{
+
+    color: rgb(0, 0, 0);
+    font-size: .8rem;
+}
+
+.precio2{
+    font-size: 1.5rem;
+}
+
+.compra{
+    padding-top: 20px;
+    font-size: 1.5rem;
+    color: rgb(55, 0, 255);
+    transform: translateX(28px);
+}
+
+.compra2{
+    padding-top: 20px;
+    font-size: 1.5rem;
+    color: rgb(255, 0, 0);
+    transform: translateX(8px);
+}
+
+
+
+.sign-form-container{
+    position: fixed;
+    top: -105%; left: 0;
+    height: 100%;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.sign-form-container.active{
+    top: 0;
+    opacity: 2;
+}
+#modal form{
+   
+    margin: auto;
+   height: 100%;
+    box-shadow: var(--caja);
+    background: rgb(231, 231, 231);
+    border: var(--borde);
+    width: 100%;
+
+}
+#modal form .btn{
+    display: block;
+    width: 50%;
+    margin: .5rem 0;
+}
+#modal form h3{
+    color:#131313;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#modal form .box{
+    margin: .8rem 0;
+    width: 90%;
+    text-transform: none;
+    color: #131313;
+    font-size: 1.0rem;
+    padding: 1rem 1.5rem ;
+    border: .1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    transform: translateX(20px);
+    background-color: rgb(255, 255, 255);
+}
+
+#modal form p{
+    padding: 1rem 0;
+    font-size: 1rem;
+    color:#131313;
+}
+#modal form p a{
+    color: var(--colorA);
+    text-decoration: underline;
+}
+.sign-form-container #close-sign-form{
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#modal::backdrop{
+    background-color: rgba(0, 0, 0, .55);
+}
+
+#modal form h1{
+    font-size: 1.3rem;
+    padding-left: 12px;
+}
+#modal{
+    width: 500px;
+    height: 700px;
+    border-radius: 2%;
+    max-width: 500px;
+    max-height: 900px;
+    margin: auto;
+   
+   
+}
+.modalu{
+    width: 500px;
+    height: 700px;
+    border-radius: 2%;
+    max-width: 500px;
+    max-height: 900px;
+    margin: auto;
+    display: none;
+}
+
+.btn13{
+    margin-top: 25px;
+    width: 200px;
+    margin-left: 25px;
+    height: 35px;
+
+    background-color: rgb(0, 0, 185);
+   color: white;
+   cursor: pointer;
+   border-radius: 10%;
+   font-size: 16px;
+}
+
+.btn14{
+    margin-top: 25px;
+    width: 200px;
+    margin-left: 25px;
+    height: 35px;
+   background-color: rgb(161, 0, 0);
+   color: white;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 10%;
+}
+
+
+#productoUpdate form{
+   
+    margin: auto;
+   height: 100%;
+    box-shadow: var(--caja);
+    background: rgb(231, 231, 231);
+    border: var(--borde);
+    width: 100%;
+
+}
+#productoUpdate form .btn{
+    display: block;
+    width: 50%;
+    margin: .5rem 0;
+}
+#productoUpdate form h3{
+    color:#131313;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#productoUpdate form .box{
+    margin: .8rem 0;
+    width: 90%;
+    text-transform: none;
+    color: #131313;
+    font-size: 1.0rem;
+    padding: 1rem 1.5rem ;
+    border: .1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    transform: translateX(20px);
+    background-color: rgb(255, 255, 255);
+}
+
+#productoUpdate form p{
+    padding: 1rem 0;
+    font-size: 1rem;
+    color:#131313;
+}
+#productoUpdate form p a{
+    color: var(--colorA);
+    text-decoration: underline;
+}
+.sign-form-container #close-sign-form{
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#productoUpdate::backdrop{
+    background-color: rgba(0, 0, 0, .55);
+}
+
+#productoUpdate form h1{
+    font-size: 1.3rem;
+    padding-left: 12px;
+}
+#productoUpdate{
+    width: 500px;
+    height: 700px;
+    border-radius: 2%;
+    max-width: 500px;
+    max-height: 900px;
+    margin: auto;
+   
+   
+}

@@ -1,0 +1,339 @@
+  @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+  :root{
+      --colorFondo: #121212;
+      --colorA:#f9d806;
+      --colorB:#ffee80;
+      --colorC:#131313;
+      --colorD:#666;
+      --colorSecundario: rgba(255, 255, 255, 0.938);
+      --borde:.1rem solid rgba(0,0,0,.1);
+      --caja:0 .5rem 1rem rgba(0,0,0,.1);
+  
+  }
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}  
+  /*REGISTRO*/
+  body {
+  
+      margin:0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      height:100vh;
+      background-image: url(../img/fondolo.png);
+      background-color: #121212;
+      background-repeat:no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100% ;
+      font-family: consolas;
+    }
+    
+  html{
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-padding-top:7 rem ;
+      scroll-behavior: smooth;
+  }
+  .btn{
+    border: none;
+      background: transparent;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      width: 650px;
+      padding: 15px 30px;
+      color:#fff;
+      letter-spacing: 4px;
+      font-size: 24px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: 0.2s;
+      text-align: center;
+      border-radius: 10px;
+  }
+  
+  .login-form-container .btn{
+    background: #121212;
+  }
+  .login-form-container .btn:hover{
+    box-shadow: 0px 0px 20px 0px #121212;
+    background: #121212;
+    transition-delay: 0s;
+    color: #f4f4fb;
+  }
+  .sign-form-container .btn{
+    background: #121212;
+  }
+  .sign-form-container .btn:hover{
+    box-shadow: 0px 0px 20px 0px #121212;
+    background: #121212;
+    transition-delay: 0s;
+    color: #f4f4fb;
+  }
+  .header .navbar a{
+      font-size: 1.9rem;
+      margin: 0 1rem;
+      color: #fff;
+      padding: 10px;
+      
+  }
+  
+  .header .btn {
+      margin-top: 0;
+  
+  }
+  .header #login i{
+      font-size: 2.5rem;
+      color: var(--colorB);
+      cursor: pointer;
+      display: none;
+  
+  
+  }
+  
+  #menu-btn{
+      font-size: 2.5rem;
+      color: var(--colorD);
+      cursor: pointer;
+      display: none;
+  }
+  
+  .header.active{
+      box-shadow: var(--caja);
+      padding: 2rem 9%;
+  }
+  
+  .login-form-container{
+      position: fixed;
+      top: -105%; left: 0;
+      height: 100%;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(0, 0, 0, .6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+  }
+  
+  .login-form-container.active{
+      top: 0;
+      opacity: 2;
+  }
+  
+  .login-form-container form{
+      padding: 4rem;
+      margin: 4rem;
+      border-radius: 1rem;
+      background:#f4f4fb;
+      border: var(--borde);
+      width: 50rem;
+  }
+  .login-form-container form:hover{
+      box-shadow: 0px 0px 20px 0px #fff;
+  }
+  .sign-form-container form:hover{
+          box-shadow: 0px 0px 20px 0px #fff;
+  }
+  
+  .login-form-container form .btn{
+      display: block;
+      width: 100%;
+      margin: .5rem 0;
+  }
+  
+  .login-form-container form h3{
+      color: var(--colorC);
+      font-size: 2.5rem;
+      padding-bottom: .5rem;
+      text-transform: uppercase;
+      text-align: center;
+  }
+  
+  .login-form-container form .box{
+      margin: .7rem 0;
+      width: 100%;
+      text-transform: none;
+      color: var(--colorC);
+      font-size: 1.6rem;
+      padding: 1rem 1.2rem ;
+      border: var(--borde);
+      border-radius: .5rem;
+  
+  }
+  .login-form-container form p{
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      color: var(--colorC);
+  }
+  .login-form-container form p a{
+      color: #131313;
+      text-decoration: none;
+  }
+  .login-form-container form p a:hover{
+      text-decoration: underline;
+  }
+  
+  
+  .login-form-container #close-login-form{
+      position: absolute;
+      top: 1.5rem; right: 2.5rem;
+      font-size: 5rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+  }
+  
+  
+  
+  .sign-form-container{
+      position: fixed;
+      top: -105%; left: 0;
+      height: 100%;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(0, 0, 0, .6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+  }
+  .sign-form-container.active{
+      top: 0;
+      opacity: 2;
+  }
+  
+  .sign-form-container form{
+      padding: 2rem;
+      margin: 2rem;
+      border-radius: .5rem;
+      box-shadow: var(--caja);
+      background:#f4f4fb ;
+      border: var(--borde);
+      width: 40rem;
+  }
+  
+  .sign-form-container form .btn{
+      display: block;
+      width: 100%;
+      margin: .5rem 0;
+  }
+  
+  .sign-form-container form h3{
+      color: var(--colorC);
+      font-size: 2.5rem;
+      padding-bottom: .5rem;
+      text-transform: uppercase;
+      text-align: center;
+  }
+  
+  .sign-form-container form .box{
+      margin: .7rem 0;
+      width: 100%;
+      text-transform: none;
+      color: var(--colorC);
+      font-size: 1.6rem;
+      padding: 1rem 1.2rem ;
+      border: var(--borde);
+      border-radius: .5rem;
+  
+  }
+  .sign-form-container form p{
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      color: var(--colorC);
+  }
+  .sign-form-container form p a{
+      color: var(--colorA);
+      text-decoration: underline;
+  }
+  
+  
+  .sign-form-container #close-sign-form{
+      position: absolute;
+      top: 1.5rem; right: 2.5rem;
+      font-size: 5rem;
+      color: #fff;
+      cursor: pointer;
+  }
+  
+.container{
+  background:  rgb(18, 18, 18, 0.6);
+  padding: 5%;
+  border-radius: 10px;
+}
+  .btn:hover{
+    background:#f4f4fb;
+    transition-delay: 1s;
+    color : #121212;
+  }
+  .btn span{
+    position: absolute;
+    display: block;
+  }
+  #span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#fff);
+  }
+  .btn:hover #span1{
+    left: 100%;
+    transition: 1s;
+  }
+  #span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#fff);
+  }
+  .btn:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay:0.5s ;
+  }
+ 
+  #span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#fff);
+  }
+  .btn:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+  }
+  #span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#fff);
+  }
+  .btn:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+  }
+
+  /*TITULO*/
+  .titulo{
+    font-size: 60px;
+    color: #fff;
+  }

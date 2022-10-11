@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --colorFondo: #f4f4fb;
+    --colorA:#ffffff;
+    --colorB:#131313;
+    --colorC:#ffffff;
+    --colorD:#666;
+    --colorSecundario: rgba(255, 255, 255, 0.938);
+    --borde:.1rem solid rgba(0,0,0,.1);
+    --caja:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s  linear;
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:7rem ;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--colorFondo);
+}
+
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: #121212; 
+    border-bottom: solid var(--colorB);
+    box-shadow: 0px 1px 10px rgb(0, 0, 0);
+    display: flex;
+    column-gap: 430px;
+    align-items: center;
+    padding: 3rem 3%;
+
+}
+.ingreso{
+    display: flex;
+    align-items: center;
+   
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background: var(--colorA);
+    color: var(--colorC);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.7rem;
+    padding: .8rem 3rem;
+    width: 180px;
+}
+a{
+    text-align: center;
+}
+.btn:hover{
+    box-shadow: 0px 0px 20px 0px var(--colorA);
+    border: solid 1px var(--colorB);
+    border-radius: .5rem;
+}
+
+.header .logo{
+    
+    font-size: 2.5rem;
+    color: var(--colorC);
+    font-weight: bolder;
+    transform: translateX(-370px);
+    z-index: 999;
+}
+
+.header .logo span{
+    color: var(--colorA);
+    padding: 7px;
+    
+}
+
+.header span{
+
+    color: white;
+    font-size: 25px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.header .navbar a{
+    font-size: 1.9rem;
+    margin: 0 1rem;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    
+
+}
+
+.header .navbar a:hover{
+    color: #121212;
+    font-weight: bold;
+}
+.header .btn {
+    margin-top: 0;
+    color: #121212;
+}
+.header #login i{
+    font-size: 2.5rem;
+    color: var(--colorB);
+    cursor: pointer;
+    display: none;
+
+
+}
+#menu-btn{
+    font-size: 2.5rem;
+    color: var(--colorD);
+    cursor: pointer;
+    display: none;
+}
+#usuario{
+    font-size: 25px;
+    text-align: center;
+    color: #121212;
+  padding-left: 15px;
+}
+.header.active{
+    box-shadow: var(--caja);
+    padding: 2rem 9%;
+}
+.login-form-container{
+    position: fixed;
+    top: -105%; left: 0;
+    height: 100%;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.login-form-container.active{
+    top: 0;
+    opacity: 2;
+}
+.login-form-container form{
+    padding: 4rem;
+    margin: 4rem;
+    border-radius: 1rem;
+    background:#fff;
+    border: var(--borde);
+    width: 50rem;
+}
+.login-form-container form:hover{
+    box-shadow: 0px 0px 20px 0px #fff;
+}
+.sign-form-container form:hover{
+        box-shadow: 0px 0px 20px 0px #fff;
+}
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+.login-form-container form h3{
+    color: var(--colorC);
+    font-size: 2.5rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.login-form-container form .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: var(--colorC);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem ;
+    border: var(--borde);
+    border-radius: .5rem;
+}
+.login-form-container form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--colorC);
+}
+.login-form-container form p a{
+    color: #131313;
+    text-decoration: none;
+}
+.login-form-container form p a:hover{
+    text-decoration: underline;
+}
+.login-form-container #close-login-form{
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+}
+.sign-form-container{
+    position: fixed;
+    top: -105%; left: 0;
+    height: 100%;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.sign-form-container.active{
+    top: 0;
+    opacity: 2;
+}
+.sign-form-container form{
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--caja);
+    background: #fff;
+    border: var(--borde);
+    width: 40rem;
+}
+.sign-form-container form .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+.sign-form-container form h3{
+    color: var(--colorC);
+    font-size: 2.5rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.sign-form-container form .box{
+    margin: .7rem 0;
+    width: 100%;
+    text-transform: none;
+    color: var(--colorC);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem ;
+    border: var(--borde);
+    border-radius: .5rem;
+
+}
+.sign-form-container form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--colorC);
+}
+.sign-form-container form p a{
+    color: var(--colorA);
+    text-decoration: underline;
+}
+.sign-form-container #close-sign-form{
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+footer{
+    background: #121212;
+    border-top: solid var(--colorB);
+    box-shadow: 1px 1px 20px rgb(0, 0, 0);
+    z-index: 999;
+    
+}
+
+.pie{
+    width:100%;
+
+}
+
+.pie .grupo1{
+   width: 100%;
+   max-width: 1200px;
+   margin:auto;
+   display: grid; 
+   grid-template-columns: repeat(4,1fr);
+   grid-gap: 90px;
+   padding: 45px 0px;
+   align-items: center;
+   justify-content: center;
+}
+
+.access a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.access a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.box1 .contact p{
+    color: #fff;;
+    margin-left: 10px;
+}
+.pie .grupo1 .box1 h2{
+    color: white;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie .grupo1 .box1 p{
+    color: #efefef;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.pie .grupo1 .box1 .redsocial a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color:transparent;
+    text-align: center; 
+    transition: all 300ms ease;
+    font-size: 25px;
+}
+
+.pie .grupo1 .box1 .redsocial a:hover{
+    color: var(--colorA);
+}
+
+.pie .grupo2{
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.side-toggle{
+    cursor:pointer;
+    color:white;
+    transform: translateX(-18px);
+    z-index: 999;
+}
+
+.slidebar{
+    position: fixed;
+    height: 100%;
+    width: 70px;
+    left: 0;
+    top: 0;
+    padding: 110px 0 20px 0;
+    color: white;
+    background-color: #121212;
+    box-shadow: 0px 0 10px rgb(0, 0, 0);
+   z-index: 0;
+    
+}
+
+.slidebar a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.slidebar-menu{
+    display: flex;
+    padding: 15px 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  
+}
+.slidebar-menu > span{
+    font-size: 25px;
+    padding-right: 30px;
+    text-align: center;
+
+}
+
+span:hover{
+    color: #000000;
+}
+#ba:hover{
+    color: #ffffff;
+    background-color: #000000;
+    
+}
+
+.slidebar-menu > p{
+    display: none;
+}
+
+.slidebar-menu:hover{
+    color: #000000;
+    background-color: #ffffff;
+
+}
+.slidebar-menu a:hover{
+    text-align: center;
+    justify-content: center;
+   color: #000000;
+}
+
+
+
+#toggle:checked ~ .slidebar{
+    width: 200px;
+}
+
+#toggle:checked  ~ .slidebar-menu a:hover{
+    color: #000000;
+}
+
+#toggle:checked ~ .slidebar .slidebar-menu > p{
+  display: flex;
+}
+#toggle:checked ~ main{
+    padding: 6rem 2rem 2rem 6rem;
+}
+
+#toggle{
+    display: none;
+}
+
+
+@media screen and (max-width:480px){
+    .slidebar{
+        display: none;
+    }
+ 
+    #toggle:checked ~ .slidebar{
+        width: 200px;
+        display: block;
+
+    }
+
+    #toggle:checked ~ .slidebar .slidebar-menu > p{
+        display: block;
+
+    }
+    #toggle:checked ~ main{
+        padding: 6rem 2rem 2rem 2rem;
+    }
+    
+}
+
+.contenedor{
+    width: 100%;
+    height: 700px;
+    background-image: url(../img/camion.jpg);
+  
+    background-position: center;
+    background-size: cover; 
+    
+}
+.frase{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    margin-top: 500px;
+    margin-left: 590px;
+    background: rgba(244, 244, 251, 0.20);
+    border-radius: 10px;
+    text-align: center;
+  
+         box-shadow: 0px 0px 20px 0px rgba(244, 244, 251, 0.20);
+         transform: translateX(85px) translateY(55px);
+}
+
+
+.frase:hover{
+    box-shadow: 0px 0px 20px 0px rgba(244, 244, 251, 0.8);
+    background: rgba(244, 244, 251, 0.8);
+    font-weight: bold;
+    color: #121212;
+}
+
+
+.heading{
+    text-align: center;
+
+}
+
+.heading span{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+
+}
+
+.heading h1{
+    font-size: 2.5rem;
+}
+.ride-container{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ride-container .cajas{
+    text-align: center;
+    padding: 20px;
+}
+
+.ride-container .cajas .bx{
+    font-size: 34px;
+    padding: 10px;
+    background: #000000;
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+}
+.ride-container .cajas p{
+    font-size: 14px;
+}
+.ride-container .cajas h2{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 1.4rem 0 0.5rem;
+
+}
+
+.ride-container .cajas .bx:hover{
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
+.parts-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 40px;
+}
+
+.parts-container .cajita{
+    flex: 1 1 17rem;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #f6f6f6;
+    border-radius: 0.5rem;
+
+}
+
+.parts-container .cajita img{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 1rem;
+
+}
+
+.parts-container .cajita h3{
+    font-size: 1.1rem;
+    font-weight: 600;
+
+}
+.parts-container .cajita span{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+    
+}
+
+.parts-container .cajita .bx{
+    color: black;
+    margin: 0.8rem 0;
+    
+}
+
+.parts-container .cajita .btn5{
+    max-width: 100px;
+}
+
+.parts-container .cajita .detalles{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: black;
+}
+.parts-container .cajita .detalles:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+.contaiiner{
+    max-width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.btn5{
+    padding: 10px 22px;
+    background: black;
+    color: white;
+    font-weight: 400;
+}
+
+.btn5:hover{
+    background: white;
+    color: black;
+}

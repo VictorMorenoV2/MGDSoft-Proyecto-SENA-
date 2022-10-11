@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias</title>
+    <link rel="stylesheet" href="assets/css/styles_contacto.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"> </script>
+</head>
+<body>
+  
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="index.html" class="logo"> <span>L</span> <span>M</span> <span>L</span></a>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="#">Nuestros servicios</a>
+            <a href="contacto.html">Contáctanos</a>
+            <a href="#">PQR</a>
+        </nav>
+        <section class="ingreso">
+            <div id="login">
+                <button class="btn">Iniciar sesión</button>
+                <i class="fa fa-user"></i>
+            </div>
+            <div id="sign">
+                <button class="btn">Registrarse</button>
+            </div>
+        </section>
+    </header>
+
+    <div class="login-form-container">
+        <span class="fas fa-times" id="close-login-form"></span>
+        <form action="controllers/inicio.php" method="post">
+            <h3>Iniciar sesión</h3>
+             <h1 class="h">Correo electronico</h1>
+             <input type="email" placeholder="Ingrese su correo electronico" class="box">
+             <h1 class="h">Contraseña</h1>
+             <input type="password " placeholder="Ingrese su contraseña" class="box">
+             <p>Olvido su contraseña <a href="#"> Click aqui</a></p>
+             <input type="submit" value="Ingresar" class="btn">
+             <p>No tiene una cuenta registrada <a href="#">Cree una</a></p> 
+        </form>
+    </div>
+
+    <div class="sign-form-container">
+        <span class="fas fa-times" id="close-sign-form"></span>
+        <form action="controllers/registro.php" method="post">
+            <h3>Registrarse</h3>
+            <h1 class="h">Nombre</h1>
+            <input type="text" placeholder="Ingrese su Nombre" name="nombre"  value="" class="box">
+             <h1 class="h">Apellido</h1>
+             <input type="text" placeholder="Ingrese su Apellido" name="apellido" value="" class="box">
+             <h1 class="h">Numero de documento</h1>
+             <input type="number" placeholder="Ingrese su numero de id" name="identificacion"  value="" class="box">
+             <h1 class="h">Numero de telefono</h1>
+             <input type="number" placeholder="Ingrese su numero de telefonico" name="telefono" value="" class="box">
+             <h1 class="h">Correo electronico</h1>
+             <input type="email" placeholder="Ingrese su correo electronico" name="correoElectronico" value="" class="box">
+              <h1 class="h">Dirección</h1>
+             <input type="text" placeholder="Ingrese su direccion postal" name="direccionUsuario" value="" class="box">        
+             <h1 class="h">Contraseña</h1>
+             <input type="password" placeholder="Ingrese su contraseña" name="contraseña" value="" class="box">
+             <input type="submit" value="Registrarse" name="registrar" class="btn">
+        </form>
+    </div>
+    <div class="login-form-container">
+        <span class="fas fa-times" id="close-login-form"></span>
+        <form action="../controllers/inicio.php" method="POST">
+            <h3>Iniciar sesión</h3>
+             <h1 class="h">Correo electronico</h1>
+             <input type="email" placeholder="Ingrese su correo electronico" name="correoElectronico" class="box">
+             <h1 class="h">Contraseña</h1>
+             <input type="password" placeholder="Ingrese su contraseña" name="contrasena" class="box">
+             <input type="submit" value="Ingresar" class="btn">
+             <p>Olvido su contraseña. <a href="#"> Click aquí</a></p>
+             <p>No tiene una cuenta registrada. <a href="#">Cree una</a></p> 
+        </form>
+    </div>
+
+    <div class="container">  
+        <div class="container_form"> 
+            <div class="fields_container"> 
+
+                <h1>Contáctanos</h1>
+                    <div id="nick_name">
+                        <label>Nombre</label><br><br><input type="text" name="nameUser" placeholder="Ingrese su nombre de usuario" id="nickname" >
+                    </div>
+                    <div id="full_name">
+                        <label>Apellido</label><br><br><input type="text" name="lastName" placeholder="Ingrese su nombre completo" id="fullname" >
+                    </div>
+                    <div id="phone_number">
+                        <label>Número de celular</label><br><br><input type="tel" name="phonenumber" placeholder="Ingrese su número telefónico" id="phonenumber">
+                    </div>
+                    <div id="e-mail">
+                        <label>Correo electrónico</label><br><br><input type="email" name="Email" placeholder="Ingrese su correo electrónico" id="email" >
+                    </div>
+                    <div id="coment">
+                        <label>Sugerencias:</label><br><br><textarea name="Suggestion" id="suggestion" placeholder="Escriba su sugerencia"></textarea><br><br>
+                    </div>
+
+            </div>
+
+                    <input type="submit" id="send" name="save"><br><br>
+
+        </div>
+      </form>
+        <div class="info_container"> 
+
+                <h1>Más información</h1><br>
+                    <p class="info">333-333-3333</p>
+                    <p class="info">creactly@gmail.com</p>
+                    <p class="info">cll 1 dig 98 crr 87 - norte</p><br>
+                    <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe mollitia, sit consequatur modi dignissimos, veniam, odit iure porro eveniet est quasi perspiciatis officiis. Suscipit, excepturi. Nihil impedit delectus eligendi ad.</p>
+
+        </div>
+    </div>
+    <footer class="pie">
+        <div class="grupo1">
+        <div class="box1">
+            <section class="access">
+            <h2>Acceso</h2>
+                <a href="index.html">Inicio</a><br>
+                <a href="">Nuestros servicios</a><br>
+                <a href="contacto.html">Contáctanos</a><br>
+                <a href="">PQR</a><br>
+            </section>
+        </div>
+        <div class="box1">
+            <section class="contact">
+                <h2>Contácto</h2>
+                    <p>314 - 4198790<p>
+                    <p>llantasml@gmail.com<p>
+                    <p>Cra 14 #53 - b 58<p>
+                </section>
+        </div>
+        <div class="box1">
+            <h2> SOBRE NOSOTROS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores iure nobis beata id.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores iure nobis beata id.</p>
+        </div>
+        <div class="box1">
+            <h2>SIGUENOS</h2>
+            <div class="redsocial">
+            <a href="https://www.facebook.com/MGD-SOFT-110232641726775/?ref=pages_you_manage" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/mgd_soft/" class="fa fa-instagram"></a>
+            <a href="mgdsoft.763@gmail.com" class="fa fa-solid fa-envelope"></a>
+            <a href="https://github.com/SantiagoFlores05/MGD-SOFT" class="fa fa-brands fa-github"></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo2">
+        <small>&copy; 2022<b> MGD SOFT</b> -Todos los derechos reservados.</small>
+    </div>
+
+</footer>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --colorFondo: #121212;
+    --colorA:#f9d806;
+    --colorB:#ffee80;
+    --colorC:#131313;
+    --colorD:#666;
+    --colorSecundario: rgba(255, 255, 255, 0.938);
+    --borde:.1rem solid rgba(0, 0, 0, 0.142);
+    --caja:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+body{
+     background-color: #f4f4fb;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s  linear;
+}
+
+.sign-form-container{
+  
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    
+}
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}
+
+.sign-form-container form{
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .1rem;
+    box-shadow: var(--caja);
+    background: #fff;
+    border: var(--borde);
+    width: 25rem;
+}
+
+.sign-form-container form .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem ;
+}
+
+.sign-form-container form h3{
+    color: var(--colorC);
+    font-size: 1.3rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.sign-form-container form .box{
+    margin: .7rem 0;
+    width: 100%;
+    height: 30px;    
+    text-transform: none;
+    color: var(--colorC);
+    font-size: 1rem;
+    padding: .5rem .5rem ;
+    border: var(--borde);
+    border-radius: .1rem;
+
+}
+
+.sign-form-container form p{
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--colorC);
+}
+.sign-form-container form p a{
+    color: var(--colorA);
+    text-decoration: underline;
+}
+.sign-form-container form h1{
+    font-size: 18px;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: .5rem;
+    border-radius: 0.2rem;
+    background: black;
+    color: white;
+    font-weight: 450;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    transform: translateX(-5px);
+}
+
+.btn:hover{
+    background-color: #015100;
+    color: #000000;
+}
+#btna:hover{
+    color: #000000;
+    background-color: rgb(158, 0, 0);
+}

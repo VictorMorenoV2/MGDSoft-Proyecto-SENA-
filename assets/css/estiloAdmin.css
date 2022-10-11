@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --colorFondo: #121212;
+    --colorA:#f9d806;
+    --colorB:#ffee80;
+    --colorC:#131313;
+    --colorD:#666;
+    --colorSecundario: rgba(255, 255, 255, 0.938);
+    --borde:.1rem solid rgba(0,0,0,.1);
+    --caja:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background:var(--colorFondo);
+  
+}
+.slidebar{
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    top: 0;
+    left: 0;
+    background-color: var(--colorA);
+    padding: 6px 14px;
+}
+
+.slidebar .logo_content .logo{
+    color: #121212;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.logo_content  .logo i{
+    font-size: 20px;
+    margin-right: 5px;
+
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin: 32px;
+}
+
+.slidebar #btn{
+    position: absolute;
+    color: #121212;
+    left: 90%;
+    top:6px;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    transform: translateX(-50%);
+
+}
+
+.slidebar ul{
+    margin-top: 20px;
+}
+.slidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    margin-top: 15px;
+}
+
+.slidebar ul li a{
+    color: #121212;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+
+.slidebar ul li a:hover{
+    color: #fff;
+    background: #121212;
+}
+
+.slidebar ul li  i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.slidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 12px;
+    outline: none;
+    background: var(--colorA);
+    padding-left: 50px;
+    font-size: 18px;
+    color: #121212;
+}
+
+.slidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: #121212;
+    font-size: 22px;
+}
+
+.slidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.slidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: #121212;
+
+}
+.profile_content .profile .profile_details{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 10px;
+
+}
+
+.profile .profile_details .name{
+    font-size: 15px;
+    font-weight: 400;
+}
+.profile .profile_details .job{
+    font-size: 12px;
+}
+
+.profile #log_out{
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.profile #log_out:hover{
+    color: #121212;
+    background: #fff;
+}
+
+.contenedor{
+  margin-left:280px;
+  width:1300px;
+  height:1000px;
+
+}
+.tabla{
+
+}
+.bx{
+    
+}
+td{
+    background:#fff;
+    color:#121212;
+}
+
+
+.h2{
+    margin-top:50px;
+    margin-bottom:50px; 
+    color:white;
+    text-align:center;
+}
+
+.a{
+    transform:translateX(1045px)
+}

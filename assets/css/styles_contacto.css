@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+:root{
+    --colorFondo: #121212;
+    --colorA:#ffee80;
+    --colorB:#ffee80;
+    --colorC:#131313;
+    --colorD:#666;
+    --colorSecundario: rgba(255, 255, 255, 0.938);
+    --borde:.1rem solid rgba(0,0,0,.1);
+    --caja:0 .5rem 1rem rgba(0,0,0,.1);
+
+
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 80vw;
+    height: 68vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 170px;
+    border: solid var(--colorSecundario);
+    box-shadow: 0px 0px 20px 0px var(--colorSecundario);
+    
+}
+.container_form{
+    background-color: var(--colorSecundario);
+    font-weight: bold;
+    color: var(--colorC);
+}
+.container_form h1{
+    margin-top: 10px;
+    margin-left: 4vh;
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+.fields_container label{
+    font-size: 21px;
+}
+.fields_container #nickname, #fullname, #phonenumber, #email, #suggestion{
+    background-color: #ffee80;
+    color: rgb(0, 0, 0);
+    outline: #010101;
+    padding: 1.5vh;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+}
+#suggestion{
+    height: 15vh;
+}
+
+#nick_name, #full_name, #phone_number, #e-mail, #coment{
+    margin-left: 5vh;
+    margin-right: 5vh;
+    width: 100%;
+}
+.container_form #send{
+    background-color:var(--colorA);
+    padding: 1vh;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right: none ;
+    width: 25%;
+}
+::placeholder{
+    font-weight: bold;
+    
+}
+.info_container{
+    background-color: #121212;
+    display: none;
+    color: #fff;
+
+}
+.info_container h1{
+    font-weight: bold;
+    color: #fff;
+    display: none;
+}
+.info{
+    margin-top: 20px;
+    color: white;
+    font-size: 17px;
+    display: none;
+}
+.container{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .fields_container{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 2vh;
+    }
+    #nick_name, #full_name, #phone_number, #e-mail, #coment{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        grid-column: 1 / span 1;
+    }
+    .fields_container #nickname, #fullname, #phonenumber, #email, #suggestion{
+        width: 65vw;
+    }
+    .info_container{
+        display: none;
+    }
+    #send{
+        margin-left: 64%;
+    }
+    .container_form h1{
+        font-size:  25px;
+    }
+@media (min-width:500px){
+    .info_container{
+        display: block;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 85% 15%;
+    }
+    .fields_container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 2vh;
+    }
+
+    #nick_name{
+        grid-column: 1 / span 1
+    }
+    #full_name{
+        grid-column:  2 /  span 1;
+    }
+    #phone_number{
+        grid-column: 1 / span 1;
+    }
+    #e-mail{
+        grid-column:  2 / span 1;
+    }
+    #coment{
+        grid-column: 1 / 6;
+    }
+    #name_creactly{
+        display: block;
+    }
+    #send{
+        margin-left: 72%;
+    }
+    .fields_container #nickname, #fullname, #phonenumber, #email, #suggestion{
+        width: 23vw;
+    }
+    #suggestion{
+        width: 60.5vw;
+    }
+    .container_form h1{
+        font-size:  30px;
+    }
+}
+@media(min-width:800px){
+    .info_container{
+        display: block;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 65% 35%;
+    }
+    .fields_container{
+        display: grid;
+        grid-template-columns: 50%  50%;
+        gap: 2vh;
+    }
+
+    #nick_name{
+        grid-column: 1 / span 1
+    }
+    #full_name{
+        grid-column:  2 /  span 1;
+    }
+    #phone_number{
+        grid-column: 1 / span 1;
+    }
+    #e-mail{
+        grid-column:  2 / span 1;
+    }
+    #coment{
+        grid-column: 1 / span 4;
+    }
+    #suggestion{
+        width: 47.5vw;
+    }
+    .fields_container #nickname, #fullname, #phonenumber, #email{
+        width: 20vw;
+    }
+    .info{
+        display: block;
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+    .info_container h1{
+        margin-top: 10px;
+        display: block;
+        margin-left: 1.5vh;
+    }
+    .container_form #send:hover{
+        background-color: var(--colorA);
+        color: #010101;
+        border: none;
+        box-shadow: 0px 0px 20px 0px var(--colorA);
+        cursor: pointer;
+    }
+    #name_creactly{
+        display: none;
+    }
+    .container_form h1{
+        font-size:  40px;
+    }
+footer{
+    margin-top:100px ;
+}
+}
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}

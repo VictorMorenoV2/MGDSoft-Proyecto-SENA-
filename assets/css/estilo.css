@@ -1,0 +1,35 @@
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    overflow-x: hidden;
+    display: flex;
+    height: 650px;
+
+}
+
+.home h1{
+    font-size: 4.5vw;
+    text-transform: uppercase;
+    color: white;
+   
+}
+section{
+    padding: 2rem 9%;
+}
+.home img{
+    width: 100%;
+    margin-top: 100px;
+  
+}
+
+.izquierda{
+    margin-top: 100px;
+    height: 100px;
+    width: 50%;
+}
+.derecha{
+    background-size: cover;
+    background-position: left;
+    width: 50%;
+    height: 50px;
+}

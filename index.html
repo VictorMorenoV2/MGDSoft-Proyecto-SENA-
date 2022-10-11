@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llantas Moreno Lopez</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"> </script>
+</head>
+<body>
+    <header class="header">
+      
+        <input type="checkbox" id="toggle">
+        <label class="side-toggle" for="toggle"><span class="fas fa-bars" id="ba"></span></label>
+        
+        <div class="slidebar">
+      <a href="#">
+        <div class="slidebar-menu" id="sidebar">
+            <span  class='bx bxs-home'  ></span><p >INICIO</p>
+        </div>
+      </a>  
+       <a href="#">
+       <div class="slidebar-menu">
+            <span class="bx bx-sitemap"></span><p >Mision</p>
+        </div>
+       </a>
+       <a href="#">
+        <div class="slidebar-menu">
+            <span class='bx bx-globe-alt' ></span><p >Visión</p>
+        </div>
+       </a>
+      
+       <a href="#">
+        <div class="slidebar-menu">
+            <span  class='bx bx-info-circle' ></span><p >Funciones</p>
+        </div>
+       </a>
+       <a href="#">
+        <div class="slidebar-menu">
+            <span  class='bx bx-current-location' ></span><p >Ubicacion</p>
+        </div>
+       </a>
+       <a href="pqr.html">
+        <div class="slidebar-menu">
+            <span  class='bx bx-current-location' ></span><p >PQR</p>
+        </div>
+       </a>
+    </div>
+        <a href="index.html" class="logo"> <span>Llantas</span>  <span>  Moreno </span> <span>  Lopez  </span></a>
+        <!-- 
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="#">Nuestros servicios</a>
+            <a href="contacto.html">Contactanos</a>
+           
+        </nav>
+        !-->
+       <div class="ingreso">
+        <div id="login">
+            <a href="Unirse.html" class="btn">Únete <span class="fas fa-user" id="usuario"></span></a>
+        </div>
+        <!-- 
+        <div id="sign">
+            <button class="btn">Registrarse</button>
+        </div>
+        !-->
+        </div>
+        
+    </header>
+
+   
+
+
+    <div class="login-form-container">
+        <span class="fas fa-times" id="close-login-form"></span>
+        <form action="controllers/inicio.php" method="POST">
+            <h3>Iniciar sesión</h3>
+             <h1 class="h">Correo electronico</h1>
+             <input type="email" placeholder="Ingrese su correo electronico" name="correoElectronico" class="box">
+             <h1 class="h">Contraseña</h1>
+             <input type="password" placeholder="Ingrese su contraseña" name="contrasena" class="box">
+             <input type="submit" value="Ingresar" class="btn">
+             <p>Olvido su contraseña. <a href="#"> Click aquí</a></p>
+             <p>No tiene una cuenta registrada. <a href="#">Cree una</a></p> 
+        </form>
+    </div>
+
+    <div class="sign-form-container">
+        <span class="fas fa-times" id="close-sign-form"></span>
+        <form action="controllers/registro.php" method="POST">
+            <h3>Registrarse</h3>
+            <h1 class="h">Nombre</h1>
+            <input type="text" placeholder="Ingrese su Nombre" name="nombre"  value="" class="box">
+             <h1 class="h">Apellido</h1>
+             <input type="text" placeholder="Ingrese su Apellido" name="apellido" value="" class="box">
+             <h1 class="h">Numero de documento</h1>
+             <input type="number" placeholder="Ingrese su numero de id" name="identificacion"  value="" class="box">
+             <h1 class="h">Numero de telefono</h1>
+             <input type="number" placeholder="Ingrese su numero de telefonico" name="telefono" value="" class="box">
+             <h1 class="h">Correo electronico</h1>
+             <input type="email" placeholder="Ingrese su correo electronico" name="correoElectronico" value="" class="box">
+              <h1 class="h">Dirección</h1>
+             <input type="text" placeholder="Ingrese su direccion postal" name="direccionUsuario" value="" class="box">        
+             <h1 class="h">Contraseña</h1>
+             <input type="password" placeholder="Ingrese su contraseña" name="contraseña" value="" class="box">
+             <input type="submit" value="Registrarse" name="registrar" class="btn">
+        </form>
+    </div>
+
+  
+
+  
+    <section class="contenedor">
+        <div class="frase"
+            <h1>El aliado en tu camino</h1>
+        </div>
+    </section>
+
+   
+
+    <section  class="ride">
+        <div class="heading">
+            <span>Información</span>
+            <h1>Llantas Moreno lopez</h1>
+
+        </div>
+        <div class="ride-container">
+            <div class="cajas">
+                <i class='bx bx-sitemap'></i>
+                <h2>Misión</h2>
+                <p>Ser lideres en la prestación de servicios para el gremio trasportador prestando el
+                servicio adecuado para cada uno de sus vehículos de la mejor manera.</p>
+            </div>
+            <div class="cajas">
+                <i class='bx bx-car'></i>
+                <h2>L M L</h2>
+                <p>Llantas Moreno López es una microempresa dedicada a venta de productos y prestación de servicios dirigidos al sistema de dirección vehicular, ofreciendo servicios técnicos orientados al área automotriz.</p>
+            </div>
+              <div class="cajas">
+                <i class='bx bx-globe-alt'></i>
+                <h2>Visión</h2>
+                <p>Lograr ingresar con grandes sucursales para posicionarnos en el mercado local y
+                generando trabajo.</p>
+            </div>
+            
+
+        </div>
+    </section> 
+
+    <section class="parts" id="parts">
+
+        <div class="heading">
+            <span>Productos</span>
+            <h1>Llantas Moreno Lopez</h1>
+        </div>
+
+        <div class="parts-container container">
+            <div class="cajita">
+                <img src="assets/img/continental.jpg">
+                <h3>Continental</h3>
+                <span>$950.000</span>
+                <i class='bx bxs-star'>(6 vistas)</i>
+                <a href="#" class="btn5">Ver más</a>
+                <a href="#" class="detalles">ver detalles</a>
+            </div>
+
+            <div class="cajita">
+                <img src="assets/img/perno.jpg">
+                <h3>Perno</h3>
+                <span>$20.000</span>
+                <i class='bx bxs-star'>(10 vistas)</i>
+                <a href="#" class="btn5">Ver más</a>
+                <a href="#" class="detalles">ver detalles</a>
+            </div>
+
+            <div class="cajita">
+                <img src="assets/img/esparrago.jpg">
+                <h3>Esparrago</h3>
+                <span>$16.000</span>
+                <i class='bx bxs-star'>(25 vistas)</i>
+                <a href="#" class="btn5">Ver más</a>
+                <a href="#" class="detalles">ver detalles</a>
+            </div>
+
+            <div class="cajita">
+                <img src="assets/img/michelin.jpg">
+                <h3>Michelin</h3>
+                <span>$650.000</span>
+                <i class='bx bxs-star'>(11 vistas)</i>
+                <a href="#" class="btn5">Ver más</a>
+                <a href="#" class="detalles">ver detalles</a>
+            </div>
+
+            <div class="cajita">
+                <img src="assets/img/parche.jpg" >
+                <h3>Parche para llantas</h3>
+                <span>$15.000</span>
+                <i class='bx bxs-star'>(3 vistas)</i>
+                <a href="#" class="btn5">Ver más</a>
+                <a href="#" class="detalles">ver detalles</a>
+            </div>
+
+           
+
+        </div>
+
+
+    </section>
+   
+    
+
+  <footer class="pie">
+    <div class="grupo1">
+    <div class="box1">
+        <section class="access">
+        <h2>Acceso</h2>
+            <a href="index.html">Inicio</a><br>
+            <a href="">Nuestros servicios</a><br>
+            <a href="contacto.html">Contáctanos</a><br>
+            <a href="">PQR</a><br>
+        </section>
+    </div>
+    <div class="box1">
+        <section class="contact">
+            <h2>Contácto</h2>
+                <p>314 - 4198790<p>
+                <p>llantasml@gmail.com<p>
+                <p>Cra 14 #53 - b 58<p>
+            </section>
+    </div>
+    <div class="box1">
+        <h2> SOBRE NOSOTROS</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores iure nobis beata id.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores iure nobis beata id.</p>
+    </div>
+    <div class="box1">
+        <h2>SIGUENOS</h2>
+        <div class="redsocial">
+            <a href="https://www.facebook.com/MGD-SOFT-110232641726775/?ref=pages_you_manage" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/mgd_soft/" class="fa fa-instagram"></a>
+            <a href="mgdsoft.763@gmail.com" class="fa fa-solid fa-envelope"></a>
+            <a href="https://github.com/SantiagoFlores05/MGD-SOFT" class="fa fa-brands fa-github"></a>
+        </div>
+    </div>
+</div> 
+<div class="grupo2">
+    <small>&copy; 2022<b> MGD SOFT</b> -Todos los derechos reservados.</small>
+</div>
+
+</footer>
+
+    <script src="assets/js/script.js"></script>
+    	
+</body>
+</html>

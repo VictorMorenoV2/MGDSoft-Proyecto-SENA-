@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #f4f4fb;
+
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+    padding-left: 6rem;
+
+}
+
+.profile{
+    display: flex;
+    width: 32%;
+    max-width: 200px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.profile-image{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.profile-name{
+    font-size: 0.9rem;
+    margin-left: -20px;
+}
+
+.side-toggle{
+    position: fixed;
+    z-index: 2;
+    top: 20;
+    left: 25;
+    float: right;
+    font-size: 25px;
+    cursor:pointer;
+    transform: translateX(10px) translateY(-5px);
+}
+
+#toggle{
+    display: none;
+}
+/*Scrool*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #f4f4fb;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(15,15, 15);
+    border-radius: 10px;
+    height: 50vh;
+}
+
+
+.slidebar{
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    left: 0;
+    top: 0;
+    padding: 80px 0 20px 0;
+    color: #fff;
+    background-color: #000000;
+    box-shadow: 2px 0 5px rgb(255, 255, 255);
+    
+}
+#sidebar{
+    transform: translateX(5px);
+}
+.slidebar a{
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+}
+.slidebar-menu{
+    display: flex;
+    padding: 15px 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  
+}
+.slidebar-menu > span{
+    font-size: 25px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.slidebar-menu:hover{
+    color: #000000;
+    background-color: #f8f8fb;
+
+}
+.slidebar-menu a:hover{
+    color: #000000;
+    background-color: #f8f8fb;
+    text-align: center;
+    justify-content: center;
+}
+
+#toggle:checked ~ .slidebar{
+    width: 70px;
+}
+
+
+#toggle:checked ~ .slidebar .slidebar-menu > p{
+    display: none;
+}
+#toggle:checked ~ main{
+    padding: 6rem 2rem 2rem 6rem;
+}
+
+
+
+main{
+    min-height: 100%;
+    padding: 6rem 1rem 2rem 14rem;
+    color: #201f2b;
+}
+
+
+.dashboard-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    grid-template-areas: 
+    "total1 total2 total3 total4 total4"
+    "detail detail detail customer customer"
+    "detail detail detail customer customer";
+}
+
+.card{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+
+}
+
+.total1{
+    grid-area: total1;
+    background-color: #000000;
+    color: #fff;
+}
+
+.total2{
+    grid-area: total2;
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+.total3{
+    grid-area: total3;
+    background-color: #000000;
+    color: #fff;
+}
+.total4{
+    grid-area: total4;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.detail{
+    grid-area: detail;
+    overflow-x: auto;
+
+}
+
+.customer{
+    grid-area: customer;
+    overflow-x: auto;
+    background-color: #000000;
+    color: white;
+}
+
+.info{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-detail h2{
+    font-size: 24px;
+
+}
+
+.info-detail p{
+    font-size: 14px;
+
+}
+
+.info-image{
+    font-size: 50px;
+    color: #ffffff;
+}
+.info-image1{
+    font-size: 50px;
+    color: #000000;
+}
+h2{
+    font: 18px;
+    padding: 15px 0; 
+}
+
+h2 > span{
+    font-size: 14px;
+}
+
+.detail-header{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-header button{
+    height: 30px;
+    width: 120px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #f2f2f2;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+}
+
+.detail-header button:hover{
+    background-color: white;
+    color: #000000;
+}
+.detail-header a{
+    height: 30px;
+    width: 265px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #f2f2f2;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    text-align: center;
+    text-decoration: none;
+}
+.detail-header a:hover{
+     background-color: white;
+    color: #000000;
+}
+.detail table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detail table tr:nth-child(add){
+    background-color: #f8f8fb;
+}
+
+.detail table th{
+    background-color: #f4f4fb;
+    font-size: 13px;
+    text-align: center;
+}
+
+.detail table , .detail table td{
+    padding: 0.8rem 0.2rem;
+    text-align: left;
+    min-width: 100px;
+    font-size: 12px;
+}
+
+.detail table tr:hover{
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #2d2d2d;
+
+}
+
+.detail table tr td:nth-child(2), .detail table tr td:nth-child(3){
+    min-width: 100px;
+}
+
+.customer-wrapper{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.4fr;
+    grid-auto-flow: column;
+    margin: 10px 0;
+    min-width: 230px;
+    align-items: flex-start;
+    gap: 5px;
+    
+}
+
+.customer-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.customer-name > p , .customer-date{
+    font-size: 0.9rem;
+}
+
+.customer-date{
+    text-align: right;
+    color: #9092a9;
+}
+
+@media screen and (max-width:980px){
+    .dashboard-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "total1 total2"
+        "total3 total4"
+        "detail detail"
+        "customer customer";
+    }
+}
+
+@media screen and (max-width:480px){
+    .profile-name{
+        display: none;
+    }
+    .slidebar{
+        display: none;
+    }
+    main{
+        padding: 6rem 2rem 2rem 2rem;
+    }
+    #toggle:checked ~ .slidebar{
+        width: 200px;
+        display: block;
+
+    }
+
+    #toggle:checked ~ .slidebar .slidebar-menu > p{
+        display: block;
+
+    }
+    #toggle:checked ~ main{
+        padding: 6rem 2rem 2rem 2rem;
+    }
+    .dashboard-container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "total1"
+        "total2"
+        "total3"
+        "total4"
+        "detail"
+        "customer";
+    }
+
+    .detail table{
+        font-size: 0.9rem;
+    }   
+}
+#icono1 , #icono2{
+    color: #000000;
+    text-decoration: none;
+    font-size: 25px;
+    padding-left:20px;
+}
+
+#icono2:hover{
+    color: rgb(255, 0, 0);
+}
+#icono1:hover{
+    color: rgb(8, 0, 255);
+}
+.detail-header .btn{
+    height: 30px;
+    width: 240px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #f2f2f2;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    text-align: center;
+    text-decoration: none;
+    transform: translateX(35px);
+}
+
+.detail-header .btn1{
+
+    width: 200px;
+}
+
+
+
+.detail-header .btn:hover{
+     background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+#ai{
+    font-size: 20px;
+    transform: translateY(3px);
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+
+#contra{
+    max-width: 10px;
+    font-size: 12px;
+}
+
+.busqueda{
+    height: 30px;
+    width: 200px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius:5px;
+    transition: all 0.2s ease-in;
+    text-align: center;
+    transform: translateX(25px);
+}
+
+.detail-foter{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top:20px;
+}
+
+.detail-foter button{
+    height: 30px;
+    width: 120px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #f2f2f2;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+}
+
+.detail-foter button:hover{
+    background-color: white;
+    color: #000000;
+}
+.detail-foter a{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #f2f2f2;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    text-decoration: none;
+}
+.detail-foter a:hover{
+     background-color: white;
+    color: #000000;
+}
+
+.numero{
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius:5px;
+    transition: all 0.2s ease-in;
+    height: 25px;
+    width: 40px;
+    text-align: center;
+    font-size: 17px;
+    transform: translateX(-170px);
+}
+.mostrar{
+    font-size: 19px;
+}
+.mostrar1{
+    font-size: 19px;
+    transform: translateX(-340px);
+}
+
+.btn5{
+    transform: translateX(155px);
+}
+.btn6{
+    transform: translateX(-11px);
+}
+#ia{
+    text-align: center;
+    font-size: 32px;
+}
+
+
+     
