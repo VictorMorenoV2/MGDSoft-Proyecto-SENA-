@@ -97,10 +97,39 @@ if(!isset($_SESSION['idUsuario'])){
                 $correo= $row['correoElectronico'];
                 $direccion= $row['direccionUsuario'];
                 $contrasena= $row['contrasena'];    
+                $imagen=$row['imagen'];
                 
              }else{
                 echo "<h1>ERROR</h1>";
              }
+             if(isset($_POST['guardar'])){
+
+                $id=$_SESSION['idUsuario'];
+                $nom=$_POST['nombre'];
+                $ape=$_POST['apellido'];
+                $iden=$_POST['identificacion'];
+                $tele=$_POST['telefono'];
+                $corre=$_POST['correo'];
+                $direc=$_POST['direccion'];
+                $contr=$_POST['contrasena'];
+                $contr=hash('sha256',$contr);
+               
+                // ACTUALIZAR IMG SE ENCUENTRA EN DESARROllo$img = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+
+
+                $query=" UPDATE usuario SET nombre = '$nom', apellido = '$ape', identificacion = '$iden', telefono = '$tele', correoElectronico = '$corre', direccionUsuario = '$direc', contrasena = '$contr' WHERE idUsuario=$id ";
+           
+                mysqli_query($conexion,$query);
+                echo'
+                <script> 
+                alert("Usuario actualizado exitosamente");
+                window.location="infoCliente.php";
+                </script>';
+
+                
+             
+            }
+
         ?>
       <div class="container">
                                 <div class="row">
@@ -116,56 +145,56 @@ if(!isset($_SESSION['idUsuario'])){
                                         
                                             <div class="col-md-3 col-lg-3 " align="center"> 
                                             <div  class="imgPerfil" id="load_img">
-                                                <img class="img-responsive" src="../../assets/img/humano.jfif" alt="Logo">
+                                                <img class="img-responsive" src="data:image/jpg;base64, <?php echo base64_encode($imagen) ?>" alt="Logo">
                                                 
                                             </div>
                                             <br>				
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="  col-0-12 col-md-12">
                                                         <div class="form-group">
-                                                            <input class='filestyle' data-buttonText="Logo" type="file" name="imagefile" id="imagefile" onchange="upload_image();">
+                                                            <!-- <input class='filestyle' type="file" name="imagen" >-->
                                                         </div>
                                                     </div>
                                                     
                                                 </div>
                                             </div>
-                                            <div class=" col-md-9 col-lg-9 "> 
+                                            <div class="col-mx-12 col-md-9 col-lg-9 "> 
                                             <table class="table table-condensed">
                                                 <tbody>
                                                 <tr>
                                                     <td class='col-md-3'>Nombres</td>
-                                                    <td><input type="text" class="form-control input-sm" name="nombre_apellido" value="<?php echo $nombre?>" required></td>
+                                                    <td><input type="text" class="form-control input-sm" name="nombre" value="<?php echo $nombre?>" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Apellidos</td>
-                                                    <td><input type="text" class="form-control input-sm" name="ocupacion" value="<?php echo $apellido?>" required></td>
+                                                    <td><input type="text" class="form-control input-sm" name="apellido" value="<?php echo $apellido?>" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Número de identificación</td>
-                                                    <td><input type="email" class="form-control input-sm" name="correo" value="<?php echo $identificacion?>" ></td>
+                                                    <td><input type="number" class="form-control input-sm" name="identificacion" value="<?php echo $identificacion?>" ></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Número de celular</td>
-                                                    <td><input type="text" class="form-control input-sm" required name="telefono" value="<?php echo $telefono?>"></td>
+                                                    <td><input type="number" class="form-control input-sm" required name="telefono" value="<?php echo $telefono?>"></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>Correo electronico</td>
-                                                    <td><input type="text" class="form-control input-sm" required name="salario" value="<?php echo $correo?>"></td>
+                                                    <td><input type="email" class="form-control input-sm" required name="correo" value="<?php echo $correo?>"></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>Dirección de residencia</td>
-                                                    <td><input type="text" class="form-control input-sm" name="idioma" value="<?php echo $direccion?>" required></td>
+                                                    <td><input type="text" class="form-control input-sm" name="direccion" value="<?php echo $direccion?>" required></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Contraseña</td>
-                                                    <td><input type="text" class="form-control input-sm" name="ciudad" value="<?php echo $contrasena?>" required></td>
+                                                    <td><input type="password" class="form-control input-sm" name="contrasena" value="<?php echo $contrasena?>" required></td>
                                                 </tr>
                                                 
                                                 </tbody>
                                             </table>
-                                            <button type="submit" class="btn btn-sm btn-success"><i class='bx bxs-wrench'></i> Actualizar Información</button>
+                                            <button type="submit" name="guardar" class="btn btn-sm btn-success"><i class='bx bxs-wrench'></i> Actualizar Información</button>
                                             <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i>Eliminar Cuenta</button>
 
                                             

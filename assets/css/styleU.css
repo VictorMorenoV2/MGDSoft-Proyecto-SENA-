@@ -337,3 +337,30 @@ body::-webkit-scrollbar-thumb{
     font-size: 60px;
     color: #fff;
   }
+
+
+
+
+
+.recordar{
+  border: none;
+  background: transparent;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  width: 650px;
+  padding: 15px 30px;
+  color:#fff;
+  letter-spacing: 4px;
+  font-size: 24px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom:15px;
+
+}
+#abcd{
+  text-decoration: none;
+}
