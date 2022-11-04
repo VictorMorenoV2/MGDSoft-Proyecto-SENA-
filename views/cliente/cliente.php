@@ -1,6 +1,22 @@
 <?php
 
+session_start();
 
+if(!isset($_SESSION['idUsuario'])){
+
+    echo '
+    
+     <script>
+       alert("Por favor  inicia sesión ");
+       window.location="../../controllers/inicio.php";
+       </script>
+    
+    ';
+        
+     header("location: ../../controllers/inicio.php");
+     session_destroy();
+     die();
+}
 
 ?>
 <!DOCTYPE html>
@@ -202,7 +218,11 @@
         <div class="slidebar-menu" id="sidebar">
             <span  class='bx bxs-home' ></span><p>INICIO</p>
         </div>
-      </a>  
+      </a>
+      <a href="infoCliente.php">
+       <div class="slidebar-menu">
+            <span class='bx bxs-user-detail'></span><p>Información</p>
+      </div>  
        <a href="#">
        <div class="slidebar-menu">
             <span class="bx bxs-map-pin"></span><p>Citas</p>

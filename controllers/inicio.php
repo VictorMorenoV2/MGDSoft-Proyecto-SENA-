@@ -41,6 +41,11 @@ if($rol2=mysqli_fetch_assoc($consulta2)){
 
 }
 
+$consulta=mysqli_query($conexion,"SELECT * FROM usuario WHERE correoElectronico ='$c'");
+$info=mysqli_fetch_array($consulta);    
+session_start();
+$_SESSION['idUsuario'] = $info['idUsuario'];
+
 $validar_login = mysqli_query($conexion, "SELECT * FROM usuario WHERE correoElectronico='$c' and contrasena='$p'");
 
     if(mysqli_num_rows($validar_login) > 0){
@@ -57,6 +62,7 @@ $validar_login = mysqli_query($conexion, "SELECT * FROM usuario WHERE correoElec
         ';
         exit;
     }
+
 
 
 ?>
