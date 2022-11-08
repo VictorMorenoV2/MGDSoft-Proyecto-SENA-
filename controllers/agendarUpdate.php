@@ -1,6 +1,20 @@
 <?php
+
+
+
+
 session_start();
 
+if(!isset($_SESSION['idUsuario'])){
+
+   
+    echo'<script>alert("POR FAVOR INICIE SESIÓN CON SUS CREDENCIALES") </script>';
+    echo'<script> window.location="../../../unirse.html"</script>';
+
+  
+     session_destroy();
+     die();
+  }
 
 /*$conexion= new PDO("mysql:dbname=llantasml;host=127.0.0.1","root","");
 

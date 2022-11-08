@@ -1,6 +1,19 @@
 <?php
 include '../../../config/conexion.php';
 
+
+session_start();
+
+if(!isset($_SESSION['idUsuario'])){
+
+   
+    echo'<script>alert("POR FAVOR INICIE SESIÓN CON SUS CREDENCIALES") </script>';
+    echo'<script> window.location="../../../unirse.html"</script>';
+
+  
+     session_destroy();
+     die();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +28,7 @@ include '../../../config/conexion.php';
         <script src="../../../assets/js/sweetAlert.js"></script>
         <link rel="stylesheet" href="../../../package/dist/sweetalert2.min.css">
         
-        <link rel="stylesheet" href="../../../assets/css/styleAdmin.css">
+        <link rel="stylesheet" href="../../../assets/css/styleAdminn2.css">
         <link rel="stylesheet" href="../../../assets/css/productos.css">
 
         
@@ -66,7 +79,7 @@ include '../../../config/conexion.php';
             <span  class='bx bxs-map-pin'></span><p>Citas</p>
         </div>
        </a>
-       <a href="index.html">
+       <a href="../../../controllers/cerrar.php">
         <div class="slidebar-menu">
             <span  class='bx bx-log-out-circle' ></span><p>Salir</p>
         </div>

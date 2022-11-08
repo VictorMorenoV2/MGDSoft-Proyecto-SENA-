@@ -150,10 +150,8 @@ main{
     gap: 1rem;
     grid-template-areas: 
     "total1 total2 total3 total4 total4"
-    "detail detail detail detail detail"
-    "detail detail detail detail detail"
-    "detail1 detail1 detail1 detail1 detail1"
-    "detail1 detail1 detail1 detail1 detail1";
+    "detail detail detail customer customer"
+    "detail detail detail customer customer";
 }
 
 .card{
@@ -192,10 +190,7 @@ main{
     overflow-x: auto;
 
 }
-.detail1{
-    grid-area: detail1;
-    overflow-x: auto;
-}
+
 .customer{
     grid-area: customer;
     overflow-x: auto;
@@ -242,13 +237,6 @@ h2 > span{
     grid-auto-flow: column;
     justify-content: space-between;
     align-items: center;
-    
-}
-.h2{
-    
-    font-size: 38px;
-    padding-bottom: 30px;
-  
 }
 
 .detail-header button{
@@ -284,7 +272,6 @@ h2 > span{
     color: #000000;
 }
 .detail table{
-    padding-top: 30px;
     width: 100%;
     border-collapse: collapse;
 }
@@ -295,7 +282,7 @@ h2 > span{
 
 .detail table th{
     background-color: #f4f4fb;
-    font-size: 20px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -303,7 +290,7 @@ h2 > span{
     padding: 0.8rem 0.2rem;
     text-align: left;
     min-width: 100px;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .detail table tr:hover{
@@ -397,8 +384,8 @@ h2 > span{
 #icono1 , #icono2{
     color: #000000;
     text-decoration: none;
-    font-size: 40px;
-    transform: translateX(50px);
+    font-size: 25px;
+    padding-left:20px;
 }
 
 #icono2:hover{
@@ -545,7 +532,7 @@ h2 > span{
 /* Estas reglas se aplicarán a todos las elementos i 
 después de cualquier input*/
 .content-input input + i{
-       background: #a51111;
+       background: #f0f0f0;
        border:2px solid rgba(0,0,0,0.2);
        position: absolute; 
        left: 0;
@@ -635,127 +622,3 @@ debemos poner definir este valor.
 }
 
 
-
-.detail1-header{
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 25px;
-    padding-bottom: 30px;
-}
-
-.detail1-header button{
-    height: 30px;
-    width: 120px;
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: #f2f2f2;
-    border-radius:5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-
-}
-
-.detail1-header button:hover{
-    background-color: white;
-    color: #000000;
-}
-.detail1-header a{
-    height: 30px;
-    width: 265px;
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: #f2f2f2;
-    border-radius:5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-    text-align: center;
-    text-decoration: none;
-}
-.detail1-header a:hover{
-     background-color: white;
-    color: #000000;
-}
-.detail1 table{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.detail1 table tr:nth-child(add){
-    background-color: #f8f8fb;
-}
-
-.detail1 table th{
-    background-color: #f4f4fb;
-    font-size: 20px;
-    text-align: center;
-}
-
-.detail1 table , .detail1 table td{
-    padding: 0.8rem 0.2rem;
-    text-align: left;
-    min-width: 100px;
-    font-size: 18px;
-}
-
-.detail1 table tr:hover{
-    background-color: #f2f2f2;
-    border-bottom: 2px solid #2d2d2d;
-
-}
-
-.detail1 table tr td:nth-child(2), .detail1 table tr td:nth-child(3){
-    min-width: 100px;
-
-}
-
-.detail1-foter{
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top:20px;
-}
-
-.detail1-foter button{
-    height: 30px;
-    width: 120px;
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: #f2f2f2;
-    border-radius:5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-
-}
-
-.detail1-foter button:hover{
-    background-color: white;
-    color: #000000;
-}
-.detail1-foter a{
-    height: 30px;
-    width: 30px;
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: #f2f2f2;
-    border-radius:5px;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-
-    text-decoration: none;
-}
-.detail1-foter a:hover{
-     background-color: white;
-    color: #000000;
-}
-
-
-input[type=submit]{
-
-    color: white;
-    background-color: #000000;
-    border-radius: 7px;
-
-}

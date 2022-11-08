@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -59,7 +60,7 @@
             <span  class='bx bxs-map-pin'></span><p>Citas</p>
         </div>
        </a>
-       <a href="index.html">
+       <a href="controllers/cerrar.php">
         <div class="slidebar-menu">
             <span  class='bx bx-log-out-circle' ></span><p>Salir</p>
         </div>
@@ -120,7 +121,7 @@
 
             <div class="card detail">
                 <div class="detail-header">
-                    <h2>Usuarios registrados</h2>
+                    <h2 class="h2">Usuarios activos</h2>
                    <!-- <a href="reportes/usuarios/reporteExcel.php" class="btn">Generar reporte pdf <i class='bx bxs-notepad' id="ai"></i></a> -->
                     <a href="reportes/usuarios/reporteExcel.php" class="btn">Generar reporte excel <i class='bx bxs-notepad' id="ai"></i></a>
                     <a href="reportes/usuarios/reportePdf.php" class="btn">Generar reporte pdf <i class='bx bxs-notepad' id="ai"></i></a>
@@ -136,11 +137,14 @@
                             <th>Correo electronico</th>
                             <th>Dirección</th>
                             <th>Contraseña</th>
-                            <th>Acciones</th>
+                            <th>Inhabilitar</th>
+                            <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($data["Usuarios"] as $dato) {
+                            $act=$dato["actividad"];
+                            if($act=="Si"){ 
                             echo "<tr>";
                             echo "<td>".$dato["nombre"]."</td>";
                             echo "<td>".$dato["apellido"]."</td>";
@@ -149,61 +153,116 @@
                             echo "<td>".$dato["correoElectronico"]."</td>";
                             echo "<td>".$dato["direccionUsuario"]."</td>";
                             echo "<td id='contra'>".$dato["contrasena"]."</td>";
-                            echo "<td><a href='index.php?c=usuarios&a=modificar&idUsuario=".$dato['idUsuario']."'><i class='bx bxs-user-detail' id='icono1'></i></a><a onclick='fntDelPersona(".$dato['idUsuario'].")' ><i class='bx bxs-trash' id='icono2'></i></a></td>";
+                            echo "<td id='acti'>
+                                    <form method='POST' action='views/usuarios/actUsuario.php?idUsuario=".$dato['idUsuario']."'>
+                                    <label class='content-input'>
+                                        
+                                        <input type='checkbox' checked  name='estado' id='estado' value='Si'>
+                                       
+                                        <i></i>
+                                        
+                                    </label>
+                                    <input type='submit' name='actualizar' value='Inhabilitar'>
+                                    </form>   
+                                </td>";                        
+                            echo "<td><a href='index.php?c=usuarios&a=modificar&idUsuario=".$dato['idUsuario']."'><i class='bx bxs-user-detail' id='icono1'></i></a></td>";
                             echo "</tr>";
+                             }
                         }
                         ?>
 				    </tbody>
                 </table>
+
+
+                
                 <div class="detail-foter">
-                  
-                  <h4 class="mostrar">Mostrar</h4> 
+               
+                  <!--<h4 class="mostrar">Mostrar</h4> 
                   <input type="number" class="numero"> 
                   <h4 class="mostrar1">registros</h4>
                   <a class="btn5"><i class='bx bx-chevrons-left' id="ia"></i></a><a class="btn6"><i class='bx bx-chevrons-right' id="ia" ></i></a>
+                    -->
                 </div>
                 </div>
+
+
+                 <!-- 
+                            USUARIOS NO ACTIVOS
+                -->
+                
                
-            <div class="card customer">
-                <h2>Actividades administrativas</h2>
-                <div class="customer-wrapper">
+                <div class="card detail1">
+                <div class="detail1-header">
+                    <h2>Usuarios Inactivos</h2>
+                   
+                </div>
+				<table >
+					<thead>
+						<tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Identificación</th>
+                            <th>Telefono</th>
+                            <th>Correo electronico</th>
+                            <th>Dirección</th>
+                            <th>Contraseña</th>
+                            <th>Activar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($data["Usuarios"] as $dato) {
+                            $act=$dato["actividad"];
+                            if($act=="No" or $act==""){ 
+                            echo "<tr>";
+                            echo "<td>".$dato["nombre"]."</td>";
+                            echo "<td>".$dato["apellido"]."</td>";
+                            echo "<td>".$dato["identificacion"]."</td>";
+                            echo "<td>".$dato["telefono"]."</td>";
+                            echo "<td>".$dato["correoElectronico"]."</td>";
+                            echo "<td>".$dato["direccionUsuario"]."</td>";
+                            echo "<td id='contra'>".$dato["contrasena"]."</td>";
+                            echo "<td id='acti'>
+                                    <form method='POST' action='views/usuarios/actUsuario.php?idUsuario=".$dato['idUsuario']."'>
+                                    <label class='content-input'>
+                                        
+                                        <input type='checkbox'   name='estado' id='estado' value='Si'>
+                                       
+                                        <i></i>
+                                        
+                                    </label>
+                                    <input type='submit' name='actualizar' value='Habilitar'>
+                                    </form>   
+                                </td>";                        
+                            echo "<td><a onclick='fntDelPersona(".$dato['idUsuario'].")' ><i class='bx bxs-trash' id='icono2'></i></a></td>";
+                            echo "</tr>";
+                             }
+                        }
+                        ?>
+				    </tbody>
+                </table>
 
-                    <img class="customer-image" src="https://picsum.photos/200/200?random=2">    
-                    <div class="customer-name">
-                    <h4>Usuarios</h4>
-                    <p>Gestionar datos </p>
-                    </div>
-                    <p class="customer-date">Hoy</p>
-                </div>    
-          
-                <div class="customer-wrapper">
-                    <img class="customer-image" src="https://picsum.photos/200/200?random=3">
-                    <div class="customer-name">
-                    <h4>Productos</h4>
-                    <p>Actualizar novedades del inventario </p>
-                    </div>
-                    <p class="customer-date">Hoy</p>
+
+                
+                <div class="detail1-foter">
+               
+                <!--  <h4 class="mostrar">Mostrar</h4> 
+                  <input type="number" class="numero"> 
+                  <h4 class="mostrar1">registros</h4>
+                  <a class="btn5"><i class='bx bx-chevrons-left' id="ia"></i></a><a class="btn6"><i class='bx bx-chevrons-right' id="ia" ></i></a>
+                    -->
+                </div>
                 </div>
 
-                <div class="customer-wrapper">
-                   <img class="customer-image" src="https://picsum.photos/200/200?random=4">   
-                   <div class="customer-name">
-                   <h4>Categorias</h4>
-                   <p>Clasificar los productos</p>
-                   </div>
-                   <p class="customer-date">Hoy</p>
-                </div>
+               
 
-                <div class="customer-wrapper">
-                    <img class="customer-image" src="https://picsum.photos/200/200?random=5">
-                    <div class="customer-name">
-                    <h4>PQR</h4>
-                    <p>Contestar peticiones de los usuarios</p>
-                    </div>
-                    <p class="customer-date">Hoy</p>
-                </div>
-            </div>
+                    
+
+
+
     </main>   
                    
     </body>
+
+  
 </html>

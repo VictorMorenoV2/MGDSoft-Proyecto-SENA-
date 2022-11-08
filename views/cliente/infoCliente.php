@@ -1,23 +1,20 @@
 <?php
 include '../../config/conexion.php';
+
 session_start();
 
 if(!isset($_SESSION['idUsuario'])){
 
-    echo '
-    
-     <script>
-       alert("Por favor  inicia sesión ");
-       window.location="../../controllers/inicio.php";
-       </script>
-    
-    ';
-        
-     header("location: ../../controllers/inicio.php");
+   
+    echo'<script>alert("POR FAVOR INICIE SESIÓN CON SUS CREDENCIALES") </script>';
+    echo'<script> window.location="../../unirse.html"</script>';
+
+  
      session_destroy();
      die();
   }
-
+  
+  
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -74,7 +71,7 @@ if(!isset($_SESSION['idUsuario'])){
         </div>
        </a>
       
-       <a href="../../index.html">
+       <a href="../../controllers/cerrar.php">
         <div class="slidebar-menu">
             <span  class='bx bx-log-out-circle' ></span><p>Salir</p>
         </div>

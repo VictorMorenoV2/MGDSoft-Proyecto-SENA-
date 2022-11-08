@@ -1,5 +1,20 @@
 <?php
 	include '../config/conexion.php';
+	session_start();
+
+
+
+if(!isset($_SESSION['idUsuario'])){
+
+   
+    echo'<script>alert("POR FAVOR INICIE SESIÓN CON SUS CREDENCIALES") </script>';
+    echo'<script> window.location="../../../unirse.html"</script>';
+
+  
+     session_destroy();
+     die();
+  }
+	
 
     if(isset($_GET['idCategoria'])){
 
