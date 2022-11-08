@@ -16,7 +16,7 @@ if(!isset($_SESSION['idUsuario'])){
      header("location: ../../controllers/inicio.php");
      session_destroy();
      die();
-  }
+}
 
 ?>
 <!DOCTYPE html>
