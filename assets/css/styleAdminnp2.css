@@ -154,6 +154,7 @@ main{
     "detail detail detail customer customer"
     "detail1 detail1 detail1 customer customer"
     "detail1 detail1 detail1 customer customer";
+
 }
 
 .card{
@@ -193,11 +194,13 @@ main{
 
 }
 
+
 .detail1{
     grid-area: detail1;
     overflow-x: auto;
 
 }
+
 .customer{
     grid-area: customer;
     overflow-x: auto;
@@ -643,4 +646,8 @@ input[type=submit]{
     transform: translateX(18px);
 }
 
+.nueb{
+
+    transform: translateX(18px);
+}
 

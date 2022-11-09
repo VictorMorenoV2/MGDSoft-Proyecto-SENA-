@@ -28,7 +28,7 @@ if(!isset($_SESSION['idUsuario'])){
         <script src="../../../assets/js/sweetAlert.js"></script>
         <link rel="stylesheet" href="../../../package/dist/sweetalert2.min.css">
         
-        <link rel="stylesheet" href="../../../assets/css/styleAdminn2.css">
+        <link rel="stylesheet" href="../../../assets/css/styleAdminnp2.css">
         <link rel="stylesheet" href="../../../assets/css/productos.css">
 
         
@@ -140,7 +140,7 @@ if(!isset($_SESSION['idUsuario'])){
 
             <div class="card detail">
                 <div class="detail-header">
-                    <h2>Productos registrados</h2>
+                    <h2>Productos Activos</h2>
                    <!-- <input type="text" class="busqueda" placeholder="Realizar busqueda &#128270">-->
                     <a href="../../../reportes/productos/reporteExcel.php" class="btn">Generar reporte excel <i class='bx bxs-notepad' id="ai"></i></a>
                     <a href="../../../reportes/productos/reportePdf.php" class="btn">Generar reporte pdf <i class='bx bxs-notepad' id="ai"></i></a>
@@ -148,17 +148,17 @@ if(!isset($_SESSION['idUsuario'])){
                     
                 </div>
                     <div class="cartica">
-                    <?php  $quer="SELECT * FROM producto";
+                    <?php  $quer="SELECT * FROM producto WHERE estado='Si'";
                         $resultado=mysqli_query($conexion,$quer);
                         while($traer=mysqli_fetch_array($resultado)){?>
 
                                 <div class="contenedorCarta">
-
+                                               
                                                 <div class="Cartas">
 
                                                         <img src="<?php echo $traer['imagenProducto']?>">
                                                 </div>
-
+                                               
                                                 <div class="infoCarta">
 
                                                     <h1><?php echo $traer['nombreProducto']?></h1>
@@ -174,11 +174,25 @@ if(!isset($_SESSION['idUsuario'])){
                                                     </div>
                                                     <a class="compra" href="../../../controllers/productoUpdate.php?idProducto=<?php echo $traer['idProducto']?>"><i class='bx bx-info-circle' ></i></a>
                                                     <a class="compra2" onclick="fntDelProducto(<?php echo $traer['idProducto']?>)" ><i class='bx bx-trash'></i></a>
-                                                   
+                                                    
+                                                    <div class="nueb">
+                                                            <form method='POST' action='actProducto.php?idProducto=<?php echo $traer['idProducto']?>'>
+                                                            <label class='content-input'>
+                                                                
+                                                                <input type='checkbox' checked  name='estado' id='estado' value='Si'>
+                                                            
+                                                                <i></i>
+                                                                
+                                                            </label>
+                                                            <input type='submit' name='actualizar' value='&#9881'>
+                                                            
+                                                        
+                                                            </form> 
+                                                    </div>
                                                 </div>
                                                 
 
-                                        </div>
+                                    </div>
  
                                         
                                       
@@ -193,6 +207,10 @@ if(!isset($_SESSION['idUsuario'])){
                   <h4 class="mostrar1">registros</h4>
                   <a class="btn5"><i class='bx bx-chevrons-left' id="ia"></i></a><a class="btn6"><i class='bx bx-chevrons-right' id="ia" ></i></a>
                 </div>
+
+
+
+                
                 </div>
                
             <div class="card customer">
@@ -234,6 +252,73 @@ if(!isset($_SESSION['idUsuario'])){
                     <p class="customer-date">Hoy</p>
                 </div>
             </div>
+
+              <!-- PRODUCTOS INACTIVOS -->
+              
+              
+              <div class="card detail1">
+                <div class="detail1-header">
+                    <h2>Productos Inactivos</h2>
+                   <!-- <input type="text" class="busqueda" placeholder="Realizar busqueda &#128270">-->
+                          
+                </div>
+                    <div class="cartica">
+                    <?php  $quer="SELECT * FROM producto WHERE estado='No' or estado='' ";
+                        $resultado=mysqli_query($conexion,$quer);
+                        while($traer=mysqli_fetch_array($resultado)){?>
+
+                                <div class="contenedorCarta">
+                                               
+                                                <div class="Cartas">
+
+                                                        <img class="inc" src="<?php echo $traer['imagenProducto']?>">
+                                                </div>
+                                               
+                                                <div class="infoCarta">
+
+                                                    <h1><?php echo $traer['nombreProducto']?></h1>
+                                                    <p class="fechaCarta"><?php echo $traer['descripcionProducto']?> </p>
+
+                                                </div>
+
+                                                <div class="precioCarta">
+                                                    <div class="boxPrecio">
+                                                        <span class="precio1">Id: <?php echo $traer['idProducto']?><span>
+                                                        <span class="precio2">$<?php echo $traer['precioProducto']?><span>
+                                                        
+                                                    </div>
+                                                    <a class="compra" href="../../../controllers/productoUpdate.php?idProducto=<?php echo $traer['idProducto']?>"><i class='bx bx-info-circle' ></i></a>
+                                                    <a class="compra2" onclick="fntDelProducto(<?php echo $traer['idProducto']?>)" ><i class='bx bx-trash'></i></a>
+                                                    
+                                                    <div class="nueb">
+                                                    <form method='POST' action='actProducto.php?idProducto=<?php echo $traer['idProducto']?>'>
+                                                            <label class='content-input'>
+                                                                
+                                                                <input type='checkbox'   name='estado' id='estado' value='Si'>
+                                                            
+                                                                <i></i>
+                                                                
+                                                            </label>
+                                                            <input type='submit' name='actualizar' value='&#9881'>
+                                                            
+                                                        
+                                                            </form> 
+                                                    </div>
+                                                </div>
+                                                
+
+                                    </div>
+ 
+                                        
+                                      
+                            <?php }?>
+                            
+                    </div>
+
+             
+         
+
+
     </main>   
                 
     

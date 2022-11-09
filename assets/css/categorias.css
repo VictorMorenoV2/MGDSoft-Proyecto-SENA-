@@ -91,7 +91,6 @@
 
     font-size: 45px;
     color: white;
-   
     text-decoration: none;
 }
 .compra .bx{
@@ -106,10 +105,16 @@
     color: white;
     font-size: 45px;
     text-decoration: none;
-    
+   
 }
-
-
+.pre{
+    transform: translateY(-70px) translateX(-165px);
+    
+   
+}
+.uform{
+    transform: translateX(205px);
+}
 .cartaCategoria:hover .introCategoria .compra .bx{
     display: flex;
     color: white;
@@ -322,4 +327,15 @@
     margin: auto;
    
    
+}
+.imagens{
+    height: 350px;
+    width: 300px;
+    border-radius: 3px;
+    transition: .5s;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.cartaCategoria:hover .imagens{
+    transform: scale(1.1) rotate(-3deg);
 }

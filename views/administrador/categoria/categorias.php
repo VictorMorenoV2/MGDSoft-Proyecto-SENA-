@@ -140,7 +140,7 @@ if(!isset($_SESSION['idUsuario'])){
 
             <div class="card detail">
                 <div class="detail-header">
-                    <h2>Categorías registradas</h2>
+                    <h2>Categorías Activas</h2>
                     <!--<input type="text" class="busqueda" placeholder="Realizar busqueda &#128270">-->
                     <a href="../../../reportes/categorias/reporteExcel.php" class="btn">Generar reporte excel <i class='bx bxs-notepad' id="ai"></i></a>
                     <a href="../../../reportes/categorias/reportePdf.php" class="btn">Generar reporte pdf <i class='bx bxs-notepad' id="ai"></i></a>
@@ -148,7 +148,7 @@ if(!isset($_SESSION['idUsuario'])){
                     
                 </div>
                  <div class="carticas">  
-                     <?php  $quer="SELECT * FROM categoria";
+                     <?php  $quer="SELECT * FROM categoria WHERE estado='Si' ";
                         $resultado=mysqli_query($conexion,$quer);
                         while($traer=mysqli_fetch_array($resultado)){?>
 
@@ -159,8 +159,25 @@ if(!isset($_SESSION['idUsuario'])){
                                                         <div class="introCategoria">
                                                                 <h1 class="h1Categoria"><?php echo $traer['nombreCategoria']?></h1>
                                                                 <p class="pCategoria"><?php echo $traer['descripcionCategoria']?></p>
+                                                                <div class="uform">   
+                                                                <form method='POST' action='actCategorias.php?idCategoria=<?php echo $traer['idCategoria']?>'>
+                                                                        <label class='content-input'>
+                                                                            
+                                                                            <input type='checkbox'  checked  name='estado' id='estado' value='Si'>
+                                                                        
+                                                                            <i></i>
+                                                                            
+                                                                        </label>
+                                                                        <input type='submit' name='actualizar' value='&#9881'>
+                                                                        
+                                                                    
+                                                                </form> 
+                                                                </div>
+
+                                                                <div class="pre">
                                                                 <a class="compra" href="../../../controllers/categoriaUpdate.php?idCategoria=<?php echo $traer['idCategoria']?>"><i class='bx bx-info-circle' ></i></a>
                                                                 <a class="compra2" onclick="fntDelCategoria(<?php echo $traer['idCategoria']?>)"><i class='bx bx-trash'></i></a>      
+                                                                 </div>
                                                             </div>
                                         </div>
                                 
@@ -174,10 +191,11 @@ if(!isset($_SESSION['idUsuario'])){
 
                 <div class="detail-foter">
             
-                  <h4 class="mostrar">Mostrar</h4> 
+                 <!-- <h4 class="mostrar">Mostrar</h4> 
                   <input type="number" class="numero"> 
                   <h4 class="mostrar1">registros</h4>
                   <a class="btn5"><i class='bx bx-chevrons-left' id="ia"></i></a><a class="btn6"><i class='bx bx-chevrons-right' id="ia" ></i></a>
+                        -->
                 </div>
             </div>
                
@@ -220,6 +238,61 @@ if(!isset($_SESSION['idUsuario'])){
                     <p class="customer-date">Hoy</p>
                 </div>
             </div>
+
+
+
+            <!--- CATEGORIAS INACTIVAS -->
+            <div class="card detail1">
+                <div class="detail1-header">
+                    <h2>Categorías Inactivas</h2>
+                        
+                </div>
+                 <div class="carticas">  
+                     <?php  $quer="SELECT * FROM categoria WHERE estado='No' or estado='' ";
+                        $resultado=mysqli_query($conexion,$quer);
+                        while($traer=mysqli_fetch_array($resultado)){?>
+
+                 
+                            <div class="contenedorCategoria">
+                                        <div class="cartaCategoria">
+                                                <img class="imagens" src="<?php echo $traer['imagenCategoria']?>" class="imgCategoria">
+                                                        <div class="introCategoria">
+                                                                <h1 class="h1Categoria"><?php echo $traer['nombreCategoria']?></h1>
+                                                                <p class="pCategoria"><?php echo $traer['descripcionCategoria']?></p>
+                                                                <div class="uform">   
+                                                                <form method='POST' action='actCategorias.php?idCategoria=<?php echo $traer['idCategoria']?>'>
+                                                                        <label class='content-input'>
+                                                                            
+                                                                            <input type='checkbox'    name='estado' id='estado' value='Si'>
+                                                                        
+                                                                            <i></i>
+                                                                            
+                                                                        </label>
+                                                                        <input type='submit' name='actualizar' value='&#9881'>
+                                                                        
+                                                                    
+                                                                </form> 
+                                                                </div>
+
+                                                                <div class="pre">
+                                                                <a class="compra" href="../../../controllers/categoriaUpdate.php?idCategoria=<?php echo $traer['idCategoria']?>"><i class='bx bx-info-circle' ></i></a>
+                                                                <a class="compra2" onclick="fntDelCategoria(<?php echo $traer['idCategoria']?>)"><i class='bx bx-trash'></i></a>      
+                                                                 </div>
+                                                            </div>
+                                        </div>
+                                
+                                    
+                            </div>  
+                    
+                        <?php }?>
+
+                </div>             
+                    
+
+             
+            </div>          
+
+
     </main>   
                 
     

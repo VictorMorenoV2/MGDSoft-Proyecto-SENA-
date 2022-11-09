@@ -9,10 +9,10 @@
 }
 
 .contenedorCarta{
-    height: 310px;
-    width: 220px;
-    max-width: 220px;
-    max-height: 310px;
+    height: 320px;
+    width: 320px;
+    /*max-width: 220px;
+    max-height: 310px;*/
     box-shadow: 0 0 7px #111;
     margin: 0 30px;
    margin-bottom: 20px;
@@ -32,12 +32,23 @@
    margin-left: 10px;
    margin-right: 10px;
     
-    width: 200px;
+    width: 300px;
     height: 165px;
     display: block;
 
 }
+.inc{
 
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 300px;
+    height: 165px;
+    display: block;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+
+}
 .contenedorCarta{
     background-color: rgb(255, 255, 255);
 }
@@ -63,7 +74,7 @@
 }
 
 .precioCarta{
-
+    padding-top: 20px;
     height: 50px;
     width: 85%;
     margin: auto;
@@ -90,16 +101,19 @@
 
 .compra{
     padding-top: 20px;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     color: rgb(55, 0, 255);
     transform: translateX(28px);
+    cursor: pointer;
 }
 
 .compra2{
     padding-top: 20px;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     color: rgb(255, 0, 0);
     transform: translateX(8px);
+    cursor: pointer;
+    padding-left: 10px;
 }
 
 
