@@ -22,12 +22,12 @@
                     </nav>
                    <div class="ingreso">
                     
-                    <form>
+                    <form method="POST" action="mailer/mailReset.php">
                     <input class="recordar" type="email" name="correo" placeholder="Ingrese su correo electronico">
 
 
                     <div id="sign">
-                        <button class="btn">Enviar correo
+                        <button name="enviar" class="btn">Enviar correo
                             <span id="span1"></span>
                             <span id="span2"></span>
                             <span id="span3"></span>
