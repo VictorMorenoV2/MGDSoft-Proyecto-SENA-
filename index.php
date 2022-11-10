@@ -3,6 +3,18 @@
 <link rel="stylesheet" href="package/dist/sweetalert2.min.css">
 
 <?php
+	session_start();
+
+	if(!isset($_SESSION['idUsuario'])){
+	
+	   
+		echo'<script>alert("POR FAVOR INICIE SESIÓN CON SUS CREDENCIALES") </script>';
+		echo'<script> window.location="unirse.html"</script>';
+	
+	  
+		 session_destroy();
+		 die();
+	}
 	
 	require_once "config/config.php";
 	require_once "core/routes.php";

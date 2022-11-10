@@ -87,25 +87,46 @@ if(!isset($_SESSION['idUsuario'])){
     </div>
 
     <main>
+    <?php 
+            $quer="SELECT COUNT(*) AS conteo FROM usuario";
+            $resultado=mysqli_query($conexion,$quer);
+            //$traer=mysqli_fetch_array($resultado);
+            while($row = mysqli_fetch_assoc($resultado)){ 
+        
+
+        {?>
+          
         <div class="dashboard-container">
             <div class="card total1">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Usuarios</h3>
                         <p>Registrados en el sistema</p>
-                        <h2>50<span> Usuarios</span></h2>
+                        <h2><?php echo $row['conteo'] ?><span> Usuarios</span></h2>
                     </div>
                     <div class="info-image">
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
             </div>
+            <?php  }}?>
+
+
+            <?php 
+            
+                    $quer="SELECT COUNT(cantidad) AS conteo FROM producto";
+                    $resultado=mysqli_query($conexion,$quer);
+                    //$traer=mysqli_fetch_array($resultado);
+                    while($row = mysqli_fetch_assoc($resultado)){ 
+            
+            
+            {?>
             <div class="card total2">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Productos</h3>
                         <p>Con existencias en inventario</p>
-                        <h2>20<span> Productos</span></h2>
+                        <h2><?php echo $row['conteo']?><span> Productos</span></h2>
                     </div>
                     <div class="info-image1">
                         <i class='bx bxs-car'></i>
@@ -113,30 +134,53 @@ if(!isset($_SESSION['idUsuario'])){
                 </div>
 
             </div>
+
+            <?php  }}?>
+            <?php   
+            
+                $quer="SELECT COUNT(*) AS conteo FROM categoria";
+                $resultado=mysqli_query($conexion,$quer);
+                //$traer=mysqli_fetch_array($resultado);
+                while($row = mysqli_fetch_assoc($resultado)){ 
+            
+        
+            {?>
             <div class="card total3">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Categorias</h3>
                         <p>Clasificacion de productos</p>
-                        <h2>8<span> Categorias</span></h2>
+                        <h2><?php echo $row['conteo']?><span> Categorias</span></h2>
                     </div>
                     <div class="info-image">
                         <i class='bx bx-barcode-reader'></i>
                     </div>
                 </div>
             </div>
+
+            <?php  }}?>
+
+            <?php 
+                    $quer="SELECT COUNT(*) AS conteo FROM pqr";
+                    $resultado=mysqli_query($conexion,$quer);
+                    //$traer=mysqli_fetch_array($resultado);
+                    while($row = mysqli_fetch_assoc($resultado)){ 
+            
+            {?>
             <div class="card total4">
                 <div class="info">
                     <div class="info-detail">
                         <h3>PQR</h3>
                         <p>Peticiones,quejas o reclamos</p>
-                        <h2>2<span> PQR</span></h2>
+                        <h2><?php echo $row['conteo']?><span> PQR</span></h2>
                     </div>
                     <div class="info-image1">
                         <i class='bx bxs-comment-detail'></i>
                     </div>
                 </div>
             </div>
+            
+            <?php  }}?>
 
             <div class="card detail">
                 <div class="detail-header">

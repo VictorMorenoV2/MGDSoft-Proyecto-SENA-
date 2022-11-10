@@ -1,4 +1,7 @@
-
+<?php
+include 'config/conexion.php';
+include 'config/conexionPDO.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -35,6 +38,8 @@
             <span  class='bx bxs-home' ></span><p>INICIO</p>
         </div>
       </a>  
+    
+      
        <a href="index.php">
        <div class="slidebar-menu">
             <span class="fas fa-users"></span><p>Usuarios</p>
@@ -67,26 +72,51 @@
        </a>
     </div>
 
+    
     <main>
+        <?php 
+            //$quer="SELECT COUNT(*) FROM usuario";
+            //$resultado=mysqli_query($conexion,$quer);
+            //$traer=mysqli_fetch_array($resultado);
+
+            $query = "SELECT COUNT(*) AS conteo FROM usuario";
+            $resulta= $conexion->prepare($query);
+            $resulta->execute();
+            $row = $resulta->fetch(PDO::FETCH_ASSOC);
+
+        {?>
+          
         <div class="dashboard-container">
             <div class="card total1">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Usuarios</h3>
                         <p>Registrados en el sistema</p>
-                        <h2>50<span> Usuarios</span></h2>
+                        <h2><?php echo $row['conteo'] ?><span> Usuarios</span></h2>
                     </div>
                     <div class="info-image">
                         <i class="fas fa-user"></i>
                     </div>
                 </div>
             </div>
+            <?php }?>
+
+
+            <?php 
+            
+                    $query = "SELECT COUNT(cantidad) AS conteo FROM producto";
+                    $resulta= $conexion->prepare($query);
+                    $resulta->execute();
+                    $row = $resulta->fetch(PDO::FETCH_ASSOC);
+            
+            
+            {?>
             <div class="card total2">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Productos</h3>
                         <p>Con existencias en inventario</p>
-                        <h2>20<span> Productos</span></h2>
+                        <h2><?php echo $row['conteo']?><span> Productos</span></h2>
                     </div>
                     <div class="info-image1">
                         <i class='bx bxs-car'></i>
@@ -94,31 +124,53 @@
                 </div>
 
             </div>
+
+            <?php }?>
+            <?php   
+            
+                    $query = "SELECT COUNT(*) AS conteo FROM categoria";
+                    $resulta= $conexion->prepare($query);
+                    $resulta->execute();
+                    $row = $resulta->fetch(PDO::FETCH_ASSOC);
+        
+            {?>
             <div class="card total3">
                 <div class="info">
                     <div class="info-detail">
                         <h3>Categorias</h3>
                         <p>Clasificacion de productos</p>
-                        <h2>8<span> Categorias</span></h2>
+                        <h2><?php echo $row['conteo']?><span> Categorias</span></h2>
                     </div>
                     <div class="info-image">
                         <i class='bx bx-barcode-reader'></i>
                     </div>
                 </div>
             </div>
+
+            <?php }?>
+
+            <?php 
+                   $query = "SELECT COUNT(*) AS conteo FROM pqr";
+                   $resulta= $conexion->prepare($query);
+                   $resulta->execute();
+                   $row = $resulta->fetch(PDO::FETCH_ASSOC);
+            
+            {?>
             <div class="card total4">
                 <div class="info">
                     <div class="info-detail">
                         <h3>PQR</h3>
                         <p>Peticiones,quejas o reclamos</p>
-                        <h2>2<span> PQR</span></h2>
+                        <h2><?php echo $row['conteo']?><span> PQR</span></h2>
                     </div>
                     <div class="info-image1">
                         <i class='bx bxs-comment-detail'></i>
                     </div>
                 </div>
             </div>
-
+            
+            <?php }?>
+ 
             <div class="card detail">
                 <div class="detail-header">
                     <h2 class="h2">Usuarios activos</h2>
