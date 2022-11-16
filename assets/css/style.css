@@ -370,7 +370,7 @@ footer{
 .side-toggle{
     cursor:pointer;
     color:white;
-    transform: translateX(-18px);
+    transform: translateX(-35px);
     z-index: 999;
 }
 
@@ -473,7 +473,74 @@ span:hover{
         padding: 6rem 2rem 2rem 2rem;
     }
     
+
+    
+
+
 }
+
+.logo12{
+    display: none;
+}
+@media screen and (max-width:820px) {
+    
+    .header{
+        width: 100%;   
+    }
+    .logo{
+        display: none;
+    }
+    
+    .btn{
+        transform: translateX(-450px);
+    }
+    .logo12{
+        display: flex;
+        font-size: 35px;
+       justify-content: center;
+        transform: translateX(-305px);
+        font-weight: bold;
+        
+    }
+    .logo12 span{
+        padding: 5px;
+    }
+
+    .side-toggle{
+        transform: translate(-3px);
+    }
+    .contenedor{
+      display: none;
+    }
+
+    .ride{
+        padding-top: 150px;
+        transform: translateX(0px);
+
+    }
+    .ride-container{
+        grid-template-columns: repeat(1);
+        grid-column: auto;
+    }
+    .parts{
+        transform: translateX(0px);
+    }
+
+    .contact{
+        display: none;
+    }
+    .access{
+        display: none;
+
+    }
+    .box1{
+        transform: translateX(-250px)
+    }
+}
+
+
+
+
 
 .contenedor{
     width: 100%;

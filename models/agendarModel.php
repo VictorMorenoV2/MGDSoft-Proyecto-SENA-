@@ -3,7 +3,9 @@
 
 //require_once "../config/conexion.php";
 
+
 $conexion= new PDO('mysql:host=localhost;dbname=llantasml','root','');
+
 
 $data = array();
 

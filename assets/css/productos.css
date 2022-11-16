@@ -317,3 +317,18 @@
    
    
 }
+
+@media screen and (max-width:820px){
+    .dashboard-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "total1 total2"
+        "total3 total4"
+        "detail detail"
+        "customer customer"
+        "detail1 detail1";
+    }
+    .detail-foter{
+        display: none;
+    }
+}

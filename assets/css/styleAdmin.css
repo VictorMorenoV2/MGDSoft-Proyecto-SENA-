@@ -394,6 +394,19 @@ h2 > span{
         font-size: 0.9rem;
     }   
 }
+
+@media screen and (max-width:820px){
+    .dashboard-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "total1 total2"
+        "total3 total4"
+        "detail detail"
+        "detail1 detail1";
+    }
+}
+
+
 #icono1 , #icono2{
     color: #000000;
     text-decoration: none;

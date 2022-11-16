@@ -110,11 +110,11 @@ if(!isset($_SESSION['idUsuario'])){
                 $direc=$_POST['direccion'];
                 $contr=$_POST['contrasena'];
                 $contr=hash('sha256',$contr);
-               
-                // ACTUALIZAR IMG SE ENCUENTRA EN DESARROllo$img = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+                
+                $img = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 
 
-                $query=" UPDATE usuario SET nombre = '$nom', apellido = '$ape', identificacion = '$iden', telefono = '$tele', correoElectronico = '$corre', direccionUsuario = '$direc', contrasena = '$contr' WHERE idUsuario=$id ";
+                $query=" UPDATE usuario SET nombre = '$nom', apellido = '$ape', identificacion = '$iden', telefono = '$tele', correoElectronico = '$corre', direccionUsuario = '$direc', contrasena = '$contr', imagen = '$img' WHERE idUsuario=$id ";
            
                 mysqli_query($conexion,$query);
                 echo'
@@ -128,76 +128,72 @@ if(!isset($_SESSION['idUsuario'])){
             }
 
         ?>
+
+
+
       <div class="container">
-                                <div class="row">
-                                <form method="post" id="perfil">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
-                            
-                            
-                                    <div class="panel panel-success"><br>
-                                        <h2 class="panel-title"><center><font size="5"><i class='glyphicon glyphicon-user'></i>BIENVENIDO DE NUEVO</font></center></h2>
-                        
-                                        <div class="panel-body">
-                                        <div class="row">
-                                        
-                                            <div class="col-md-3 col-lg-3 " align="center"> 
+            <div class="row">
+                <form method="post" id="perfil"  enctype="multipart/form-data">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
+                        <div class="panel panel-success"><br>
+                            <h2 class="panel-title"><center><font size="5"><i class='glyphicon glyphicon-user'></i>BIENVENIDO DE NUEVO</font></center></h2>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 " align="center"> 
                                             <div  class="imgPerfil" id="load_img">
-                                                <img class="img-responsive" src="data:image/jpg;base64, <?php echo base64_encode($imagen) ?>" alt="Logo">
-                                                
+                                                <img class="img-responsive" src="data:image/jpg;base64, <?php echo base64_encode($imagen) ?>" alt="Logo">                                               
                                             </div>
-                                            <br>				
-                                                <div class="row">
-                                                    <div class="  col-0-12 col-md-12">
-                                                        <div class="form-group">
-                                                            <!-- <input class='filestyle' type="file" name="imagen" >-->
+                                                <br>				
+                                                    <div class="row">
+                                                        <div class="  col-0-12 col-md-12">
+                                                            <div class="form-group">
+                                                            <input class='filestyle' type="file" name="imagen" >
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                     
-                                                </div>
+                                                    </div>
                                             </div>
-                                            <div class="col-mx-12 col-md-9 col-lg-9 "> 
-                                            <table class="table table-condensed">
-                                                <tbody>
-                                                <tr>
-                                                    <td class='col-md-3'>Nombres</td>
-                                                    <td><input type="text" class="form-control input-sm" name="nombre" value="<?php echo $nombre?>" required></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apellidos</td>
-                                                    <td><input type="text" class="form-control input-sm" name="apellido" value="<?php echo $apellido?>" required></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Número de identificación</td>
-                                                    <td><input type="number" class="form-control input-sm" name="identificacion" value="<?php echo $identificacion?>" ></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Número de celular</td>
-                                                    <td><input type="number" class="form-control input-sm" required name="telefono" value="<?php echo $telefono?>"></td>
-                                                </tr>
+                                                                     <div class="col-mx-12 col-md-9 col-lg-9 "> 
+                                                                                    <table class="table table-condensed">
+                                                                                    <tbody>
+                                                                                    <tr>
+                                                                                        <td class='col-md-3'>Nombres</td>
+                                                                                        <td><input type="text" class="form-control input-sm" name="nombre" value="<?php echo $nombre?>" required></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Apellidos</td>
+                                                                                        <td><input type="text" class="form-control input-sm" name="apellido" value="<?php echo $apellido?>" required></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Número de identificación</td>
+                                                                                        <td><input type="number" class="form-control input-sm" name="identificacion" value="<?php echo $identificacion?>" ></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Número de celular</td>
+                                                                                        <td><input type="number" class="form-control input-sm" required name="telefono" value="<?php echo $telefono?>"></td>
+                                                                                    </tr>
 
-                                                <tr>
-                                                    <td>Correo electronico</td>
-                                                    <td><input type="email" class="form-control input-sm" required name="correo" value="<?php echo $correo?>"></td>
-                                                </tr>
+                                                                                    <tr>
+                                                                                        <td>Correo electronico</td>
+                                                                                        <td><input type="email" class="form-control input-sm" required name="correo" value="<?php echo $correo?>"></td>
+                                                                                    </tr>
 
-                                                <tr>
-                                                    <td>Dirección de residencia</td>
-                                                    <td><input type="text" class="form-control input-sm" name="direccion" value="<?php echo $direccion?>" required></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Contraseña</td>
-                                                    <td><input type="password" class="form-control input-sm" name="contrasena" value="<?php echo $contrasena?>" required></td>
-                                                </tr>
-                                                
-                                                </tbody>
-                                            </table>
-                                            <button type="submit" name="guardar" class="btn btn-sm btn-success"><i class='bx bxs-wrench'></i> Actualizar Información</button>
-                                            <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i>Eliminar Cuenta</button>
-
-                                            
+                                                                                    <tr>
+                                                                                        <td>Dirección de residencia</td>
+                                                                                        <td><input type="text" class="form-control input-sm" name="direccion" value="<?php echo $direccion?>" required></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Contraseña</td>
+                                                                                        <td><input type="password" class="form-control input-sm" name="contrasena" value="<?php echo $contrasena?>" required></td>
+                                                                                    </tr>
+                                                                                    
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <button type="submit" name="guardar" class="btn btn-sm btn-success"><i class='bx bxs-wrench'></i> Actualizar Información</button>
+                                                                                <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i>Eliminar Cuenta</button>
+                                                                        </div>
+                                                             <div class='col-md-12' id="resultados_ajax"></div>
                                             </div>
-                                            <div class='col-md-12' id="resultados_ajax"></div>
-                                        </div>
                                         </div>
                                             <div class="panel-footer text-center">
                                                 
@@ -209,8 +205,8 @@ if(!isset($_SESSION['idUsuario'])){
                                         
                                     </div>
                                     </div>
-                                    </form>
-                                </div>
+                </form>                    
+        </div>
     </main>
     
 </body>
