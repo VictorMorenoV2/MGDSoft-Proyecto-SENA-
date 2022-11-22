@@ -104,7 +104,7 @@ include 'config/conexionPDO.php';
 
             <?php 
             
-                    $query = "SELECT COUNT(cantidad) AS conteo FROM producto";
+                    $query = "SELECT SUM(cantidad) AS conteo FROM producto";
                     $resulta= $conexion->prepare($query);
                     $resulta->execute();
                     $row = $resulta->fetch(PDO::FETCH_ASSOC);

@@ -84,7 +84,6 @@ a{
     border: solid 1px var(--colorB);
     border-radius: .5rem;
 }
-
 .header .logo{
     
     font-size: 2.5rem;
@@ -100,6 +99,20 @@ a{
     
 }
 
+.header .hola1{
+    
+    font-size: 2.5rem;
+    color: var(--colorC);
+    font-weight: bolder;
+    transform: translateX(-370px);
+    z-index: 999;
+}
+
+.header .hola1 span{
+    color: var(--colorA);
+    padding: 7px;
+    
+}
 .header span{
 
     color: white;

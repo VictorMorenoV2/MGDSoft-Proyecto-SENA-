@@ -11,6 +11,10 @@
 
 
 }
+.body1{
+    background-color: #000000;
+}
+
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -38,10 +42,11 @@
     font-weight: bold;
 }
 .fields_container label{
+    color: #000000;
     font-size: 21px;
 }
 .fields_container #nickname, #fullname, #phonenumber, #email, #suggestion{
-    background-color: #ffee80;
+    background-color: #C0CBCF;
     color: rgb(0, 0, 0);
     outline: #010101;
     padding: 1.5vh;
@@ -61,8 +66,9 @@
     width: 100%;
 }
 .container_form #send{
-    background-color:var(--colorA);
+    background-color:#000000;
     padding: 1vh;
+    color: white;
     font-weight: bold;
     font-size: 15px;
     border-radius: 5px;
@@ -80,18 +86,24 @@
     background-color: #121212;
     display: none;
     color: #fff;
-
+   
 }
 .info_container h1{
     font-weight: bold;
     color: #fff;
     display: none;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(55px);
 }
 .info{
     margin-top: 20px;
     color: white;
     font-size: 17px;
     display: none;
+    transform: translateY(55px);
+
 }
 .container{
         display: grid;
@@ -235,4 +247,65 @@ body::-webkit-scrollbar-thumb{
     background: rgb(15,15, 15);
     border-radius: 10px;
     height: 50vh;
+}
+
+
+.header1{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: #121212; 
+    border-bottom: solid var(--colorB);
+    box-shadow: 0px 1px 10px rgb(0, 0, 0);
+    display: flex;
+    column-gap: 1100px;
+    align-items: center;
+    padding: 3rem 3%;
+
+}.header .hola1{
+    
+    font-size: 2.5rem;
+    color: var(--colorC);
+    font-weight: bolder;
+    transform: translateX(-370px);
+    z-index: 999;
+}
+
+.header1 .hola1 span{
+    color: var(--colorA);
+    padding: 7px;
+    
+}
+.header1 span{
+
+    color: white;
+    font-size: 25px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.header1 .navbar a{
+    font-size: 1.9rem;
+    margin: 0 1rem;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    
+
+}
+
+.header1 .navbar a:hover{
+    color: #121212;
+    font-weight: bold;
+}
+.header1 .btn {
+    margin-top: 0;
+    color: #121212;
+}
+.header1 #login i{
+    font-size: 2.5rem;
+    color: var(--colorB);
+    cursor: pointer;
+    display: none;
+
+
 }

@@ -40,12 +40,18 @@ if(!isset($_SESSION['idUsuario'])){
          $nom=$_POST['nombre'];
          $des=$_POST['descripcion'];
          $pre=$_POST['precio'];
-         $img=$_POST['imagen'];
+
+         $img = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
          
          $query=" UPDATE producto SET nombreProducto = '$nom', descripcionProducto = '$des', precioProducto = '$pre',  imagenProducto = '$img' WHERE idProducto=$id  ";
     
          mysqli_query($conexion,$query);
-         header("location:../views/administrador/producto/productos.php");
+		 echo'
+		 <script> 
+		 alert("Producto actualizado exitosamente");
+		 window.location="../views/administrador/producto/productos.php";
+		 </script>';
+     
       }
 ?>
 
@@ -66,23 +72,23 @@ if(!isset($_SESSION['idUsuario'])){
 	<body>
 		<div class="sign-form-container">
 			
-			<form id="nuevo" name="nuevo" method="POST" action="productoUpdate.php?idProducto=<?php echo $id?>" >
+			<form id="nuevo" enctype="multipart/form-data" name="nuevo" method="POST" action="productoUpdate.php?idProducto=<?php echo $id?> " >
 			<h3>Modificar producto</h3>
 					<h1 class="h" for="nombre">Nombre</h1>
-					<input class="box" type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>" />
+					<input class="box" type="text" class="form-control" id="nombre" name="nombre" require value="<?php echo $nombre ?>" />
 			
 			
 					<h1 class="h" for="apellido">Descripción</h1>
-					<input class="box" type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion ?>" />
+					<input class="box" type="text" class="form-control" id="descripcion" name="descripcion"  require value="<?php echo $descripcion ?>" />
 			
 			
 					<h1 class="h" for="identificacion">Precio</h1>
-					<input class="box" type="number" class="form-control" id="precio" name="precio" value="<?php echo $precio ?>" />
+					<input class="box" type="number" class="form-control" id="precio" name="precio" value="<?php echo $precio ?>" require />
 		
 				
 				
 					<h1 class="h" for="telefono">Imagen</h1>
-					<input class="box" type="text" class="form-control" id="imagen" name="imagen" value="<?php echo $imagen ?> " />
+					<input class="box" type="file" class="form-control" id="imagen" name="imagen" require  />
 			
 				
 		

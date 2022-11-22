@@ -9,26 +9,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"> </script>
 </head>
-<body>
+<body class="body1">
   
-    <header class="header">
-        <div id="menu-btn" class="fas fa-bars"></div>
-        <a href="index.html" class="logo"> <span>L</span> <span>M</span> <span>L</span></a>
+    <header class="header1">
+       
+        <a href="index.html" class="hola1"> <span>Llantas</span>  <span>  Moreno </span> <span>  Lopez  </span></a>
+        <!--
         <nav class="navbar">
             <a href="index.html">Inicio</a>
             <a href="#">Nuestros servicios</a>
             <a href="contacto.html">Contáctanos</a>
             <a href="#">PQR</a>
-        </nav>
-        <section class="ingreso">
-            <div id="login">
-                <button class="btn">Iniciar sesión</button>
-                <i class="fa fa-user"></i>
-            </div>
-            <div id="sign">
-                <button class="btn">Registrarse</button>
-            </div>
-        </section>
+        </nav>-->
+        <a href="Unirse.html" class="btn">Únete <span class="fas fa-user" id="usuario"></span></a>
+      
     </header>
 
     <div class="login-form-container">
@@ -79,26 +73,26 @@
              <p>No tiene una cuenta registrada. <a href="#">Cree una</a></p> 
         </form>
     </div>
-
+    <form method="POST" action="controllers/pqrcliente.php">
     <div class="container">  
         <div class="container_form"> 
             <div class="fields_container"> 
-
+   
                 <h1>Contáctanos</h1>
                     <div id="nick_name">
-                        <label>Nombre</label><br><br><input type="text" name="nameUser" placeholder="Ingrese su nombre de usuario" id="nickname" >
+                        <label>Nombre</label><br><br><input type="text" required name="nameUser" placeholder="Ingrese su nombre de usuario" id="nickname" >
                     </div>
                     <div id="full_name">
-                        <label>Apellido</label><br><br><input type="text" name="lastName" placeholder="Ingrese su nombre completo" id="fullname" >
+                        <label>Apellido</label><br><br><input type="text"  required name="lastName" placeholder="Ingrese su nombre completo" id="fullname" >
                     </div>
                     <div id="phone_number">
-                        <label>Número de celular</label><br><br><input type="tel" name="phonenumber" placeholder="Ingrese su número telefónico" id="phonenumber">
+                        <label>Número de celular</label><br><br><input type="number" required  name="phonenumber" placeholder="Ingrese su número telefónico" id="phonenumber">
                     </div>
                     <div id="e-mail">
                         <label>Correo electrónico</label><br><br><input type="email" name="Email" placeholder="Ingrese su correo electrónico" id="email" >
                     </div>
                     <div id="coment">
-                        <label>Sugerencias:</label><br><br><textarea name="Suggestion" id="suggestion" placeholder="Escriba su sugerencia"></textarea><br><br>
+                        <label>Sugerencias:</label><br><br><textarea name="Suggestion" id="suggestion" placeholder="Escriba su sugerencia" required></textarea><br><br>
                     </div>
 
             </div>
@@ -110,11 +104,13 @@
         <div class="info_container"> 
 
                 <h1>Más información</h1><br>
-                    <p class="info">333-333-3333</p>
-                    <p class="info">creactly@gmail.com</p>
-                    <p class="info">cll 1 dig 98 crr 87 - norte</p><br>
-                    <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe mollitia, sit consequatur modi dignissimos, veniam, odit iure porro eveniet est quasi perspiciatis officiis. Suscipit, excepturi. Nihil impedit delectus eligendi ad.</p>
-
+                <p class="info">Nosotros somos una empresa que se dedica a el mantenimiento de direccion automotriz.
+                    En esta seccion podras comunicarte directamente con nosotros ya sea para dar alguna Pregunta, Queja     o Reclamo.</p>
+                    
+                    <p class="info">+57 310-482-8975</p>
+                    <p class="info">llantasml@gmail.com</p>
+                    <p class="info">cra 14#53 -B 58</p><br>
+                  
         </div>
     </div>
     <footer class="pie">
@@ -146,7 +142,7 @@
             <div class="redsocial">
             <a href="https://www.facebook.com/MGD-SOFT-110232641726775/?ref=pages_you_manage" class="fa fa-facebook"></a>
             <a href="https://www.instagram.com/mgd_soft/" class="fa fa-instagram"></a>
-            <a href="mgdsoft.763@gmail.com" class="fa fa-solid fa-envelope"></a>
+            <a href="mailto:llantasmorenolopez@gmail.com" class="fa fa-solid fa-envelope"></a>
             <a href="https://github.com/SantiagoFlores05/MGD-SOFT" class="fa fa-brands fa-github"></a>
             </div>
         </div>

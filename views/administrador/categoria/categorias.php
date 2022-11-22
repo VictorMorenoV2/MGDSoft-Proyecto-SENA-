@@ -114,7 +114,7 @@ if(!isset($_SESSION['idUsuario'])){
 
             <?php 
             
-                    $quer="SELECT COUNT(cantidad) AS conteo FROM producto";
+                    $quer="SELECT SUM(cantidad) AS conteo FROM producto";
                     $resultado=mysqli_query($conexion,$quer);
                     //$traer=mysqli_fetch_array($resultado);
                     while($row = mysqli_fetch_assoc($resultado)){ 

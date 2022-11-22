@@ -111,7 +111,7 @@ if(!isset($_SESSION['idUsuario'])){
 
             <?php 
             
-                    $quer="SELECT COUNT(cantidad) AS conteo FROM producto";
+                    $quer="SELECT SUM(cantidad) AS conteo FROM producto";
                     $resultado=mysqli_query($conexion,$quer);
                     //$traer=mysqli_fetch_array($resultado);
                     while($row = mysqli_fetch_assoc($resultado)){ 
@@ -188,6 +188,9 @@ if(!isset($_SESSION['idUsuario'])){
                 <table class="tableAdmin">
             <tr>
                 <td id="encabezadoA">Nombre</td>
+                <td id="encabezadoA">Apellido</td>
+                <td id="encabezadoA">Telefono</td>
+                <td id="encabezadoA">Correo</td>
                 <td id="encabezado">Comentario</td>
                 <td id="encabezadoB">Respuesta</td>  
                 <td id="encabezadoC">Acciones</td>
@@ -195,13 +198,16 @@ if(!isset($_SESSION['idUsuario'])){
             <br>
             <?php 
 
-            $sql="SELECT idPQR, nombreUsuario, correo, descripcionPQR FROM pqr";
+            $sql="SELECT * FROM pqr";
             $result=mysqli_query($conexion,$sql);
             while($mostrar=mysqli_fetch_array($result)){
             ?>    
 
             <tr>
                 <td id="camposA"><?php echo $mostrar['nombreUsuario'] ?></td>
+                <td id="camposA"><?php echo $mostrar['apellidoUsuario'] ?></td>
+                <td id="camposA"><?php echo $mostrar['telefonoUsuario'] ?></td>
+                <td id="camposA"><?php echo $mostrar['correo'] ?></td>
                 <td id="campos"><?php echo $mostrar['descripcionPQR'] ?></td>
                 <td id="camposB"><a href="mailto: <?php echo $mostrar['correo'] ?>"><i class='bx bxs-message-rounded-dots' ></i></a></td>
                 <td id="camposC"><a href="controllers/pqr.php?idPQR=<?php echo $mostrar['idPQR'] ?>"><i class='bx bxs-trash' id='icono2'></i></a></td>
