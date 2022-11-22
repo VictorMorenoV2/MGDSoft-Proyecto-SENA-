@@ -206,14 +206,14 @@ if(!isset($_SESSION['idUsuario'])){
                                                 <div class="infoCarta">
 
                                                     <h1 class="g"><?php echo $traer['nombreProducto']?></h1>
-                                                    <p class="fechaCarta"><?php echo $traer['descripcionProducto']?> </p>
+                                                    <p class="fechaCarta g"><?php echo $traer['descripcionProducto']?> </p>
 
                                                 </div>
 
                                                 <div class="precioCarta">
                                                     <div class="boxPrecio">
-                                                        <span class="precio1">Id: <?php echo $traer['idProducto']?><span>
-                                                        <span class="precio2">$<?php echo $traer['precioProducto']?><span>
+                                                        <span class="precio1 g">Id: <?php echo $traer['idProducto']?><span>
+                                                        <span class="precio2 g">$<?php echo $traer['precioProducto']?><span>
                                                         
                                                     </div>
                                                     <a class="compra" href="../../../controllers/productoUpdate.php?idProducto=<?php echo $traer['idProducto']?>"><i class='bx bx-info-circle' ></i></a>
@@ -320,15 +320,15 @@ if(!isset($_SESSION['idUsuario'])){
                                                
                                                 <div class="infoCarta">
 
-                                                    <h1><?php echo $traer['nombreProducto']?></h1>
-                                                    <p class="fechaCarta"><?php echo $traer['descripcionProducto']?> </p>
+                                                    <h1 class="g"><?php echo $traer['nombreProducto']?></h1>
+                                                    <p class="fechaCarta g"><?php echo $traer['descripcionProducto']?> </p>
 
                                                 </div>
 
                                                 <div class="precioCarta">
                                                     <div class="boxPrecio">
-                                                        <span class="precio1">Id: <?php echo $traer['idProducto']?><span>
-                                                        <span class="precio2">$<?php echo $traer['precioProducto']?><span>
+                                                        <span class="precio1 g">Id: <?php echo $traer['idProducto']?><span>
+                                                        <span class="precio2 g">$<?php echo $traer['precioProducto']?><span>
                                                         
                                                     </div>
                                                     <a class="compra" href="../../../controllers/productoUpdate.php?idProducto=<?php echo $traer['idProducto']?>"><i class='bx bx-info-circle' ></i></a>
