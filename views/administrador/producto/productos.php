@@ -185,7 +185,7 @@ if(!isset($_SESSION['idUsuario'])){
             <div class="card detail">
                 <div class="detail-header">
                     <h2>Productos Activos</h2>
-                   <!-- <input type="text" class="busqueda" placeholder="Realizar busqueda &#128270">-->
+                   <input id="searchbar" onkeyup="search_animal()" type="text" name="search" class="busqueda" placeholder="Realizar busqueda &#128270">
                     <a href="../../../reportes/productos/reporteExcel.php" class="btn">Generar reporte excel <i class='bx bxs-notepad' id="ai"></i></a>
                     <a href="../../../reportes/productos/reportePdf.php" class="btn">Generar reporte pdf <i class='bx bxs-notepad' id="ai"></i></a>
                     <a id="btnAbrirModal" class="btn1">Agregar producto<i class='bx bxs-car' id="ai"></i></a>
@@ -205,7 +205,7 @@ if(!isset($_SESSION['idUsuario'])){
                                                
                                                 <div class="infoCarta">
 
-                                                    <h1><?php echo $traer['nombreProducto']?></h1>
+                                                    <h1 class="g"><?php echo $traer['nombreProducto']?></h1>
                                                     <p class="fechaCarta"><?php echo $traer['descripcionProducto']?> </p>
 
                                                 </div>
@@ -450,6 +450,21 @@ if(!isset($_SESSION['idUsuario'])){
             modalAdd.style.display='none';
         }
 */
+
+function search_animal() {
+    let input = document.getElementById('searchbar').value;
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('g');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.color="black";
+        }
+        else {
+            x[i].style.color="blue";                 
+        }
+    }
+}
 </script>
 
 </body>

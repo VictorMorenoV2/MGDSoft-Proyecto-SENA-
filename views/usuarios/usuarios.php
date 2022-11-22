@@ -188,7 +188,7 @@ include 'config/conexionPDO.php';
                             <th>Telefono</th>
                             <th>Correo electronico</th>
                             <th>Dirección</th>
-                            <th>Contraseña</th>
+                            <!-- <th>Contraseña</th> -->
                             <th>Inhabilitar</th>
                             <th>Editar</th>
                         </tr>
@@ -204,7 +204,7 @@ include 'config/conexionPDO.php';
                             echo "<td>".$dato["telefono"]."</td>";
                             echo "<td>".$dato["correoElectronico"]."</td>";
                             echo "<td>".$dato["direccionUsuario"]."</td>";
-                            echo "<td id='contra'>".$dato["contrasena"]."</td>";
+                           // echo "<td id='contra'>".$dato["contrasena"]."</td>";
                             echo "<td id='acti'>
                                     <form method='POST' action='views/usuarios/actUsuario.php?idUsuario=".$dato['idUsuario']."'>
                                     <label class='content-input'>
@@ -257,7 +257,7 @@ include 'config/conexionPDO.php';
                             <th>Telefono</th>
                             <th>Correo electronico</th>
                             <th>Dirección</th>
-                            <th>Contraseña</th>
+                           <!-- <th>Contraseña</th>-->
                             <th>Activar</th>
                             <th>Eliminar</th>
                         </tr>
@@ -273,7 +273,7 @@ include 'config/conexionPDO.php';
                             echo "<td>".$dato["telefono"]."</td>";
                             echo "<td>".$dato["correoElectronico"]."</td>";
                             echo "<td>".$dato["direccionUsuario"]."</td>";
-                            echo "<td id='contra'>".$dato["contrasena"]."</td>";
+                           // echo "<td id='contra'>".$dato["contrasena"]."</td>";
                             echo "<td id='acti'>
                                     <form method='POST' action='views/usuarios/actUsuario.php?idUsuario=".$dato['idUsuario']."'>
                                     <label class='content-input'>

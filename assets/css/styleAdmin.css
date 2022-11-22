@@ -693,6 +693,7 @@ debemos poner definir este valor.
 .detail1 table{
     width: 100%;
     border-collapse: collapse;
+    
 }
 
 .detail1 table tr:nth-child(add){
