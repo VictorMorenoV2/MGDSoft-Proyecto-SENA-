@@ -196,7 +196,7 @@ if(!isset($_SESSION['idUsuario'])){
                         $resultado=mysqli_query($conexion,$quer);
                         while($traer=mysqli_fetch_array($resultado)){?>
 
-                                <div class="contenedorCarta">
+                                <div class="contenedorCarta g">
                                                
                                                 <div class="Cartas">
 
@@ -311,7 +311,7 @@ if(!isset($_SESSION['idUsuario'])){
                         $resultado=mysqli_query($conexion,$quer);
                         while($traer=mysqli_fetch_array($resultado)){?>
 
-                                <div class="contenedorCarta">
+                                <div class="contenedorCarta g">
                                                
                                                 <div class="Cartas">
 
@@ -459,9 +459,11 @@ function search_animal() {
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.color="black";
+            x[i].style.display="none";
         }
         else {
-            x[i].style.color="blue";                 
+            x[i].style.color="blue"; 
+            x[i].style.display="block";               
         }
     }
 }
