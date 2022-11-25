@@ -69,13 +69,13 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.zoho.com';                      //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'mgdsoft27@zohomail.com';                     //SMTP username
-    $mail->Password   = 'Mg2468763';                               //SMTP password
+    $mail->Username   = 'mgdsoft7@zohomail.com';                     //SMTP username
+    $mail->Password   = 'Mgdsoft2468763';//'Mgdsoft2468763';//'Mg2468763';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('mgdsoft27@zohomail.com', 'RECUPERAR CONTRASEÑA');
+    $mail->setFrom('mgdsoft7@zohomail.com', 'RECUPERAR CONTRASEÑA');
     $mail->addAddress($email);     //Add a recipient
     /*$mail->addAddress('ellen@example.com');               //Name is optional
     $mail->addReplyTo('info@example.com', 'Information');
@@ -87,19 +87,17 @@ try {
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';                                  //Set email format to HTML
     $mail->Subject = 'Nueva contraseña';
     $mail->Body    = '<p>Hemos actualizado su contraseña, el token para recuperar su contraseña es:</p><h3>'.$token.'</h3>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
    // echo 'Message has been sent';
 } catch (Exception $e) {
+   // $error=true;
     //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
-
-
-
 
   $query=("INSERT INTO recuperar (email,token) values('$email','$token')");
   $result= mysqli_query($conexion,$query);

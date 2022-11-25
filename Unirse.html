@@ -64,7 +64,7 @@
     
         <div class="sign-form-container">
             <span class="fas fa-times" id="close-sign-form"></span>
-            <form action="controllers/registro.php" method="POST">
+            <form id="formR" action="controllers/registro.php" method="POST">
                 <h3>Registrarse</h3>
                 <h1 class="h">Nombre</h1>
                 <input type="text" placeholder="Ingrese su Nombre" name="nombre"  value="" class="box" required>
@@ -79,11 +79,101 @@
                   <h1 class="h">Dirección</h1>
                  <input type="text" placeholder="Ingrese su direccion postal" name="direccionUsuario" value="" class="box" required>        
                  <h1 class="h">Contraseña</h1>
-                 <input type="password" placeholder="Ingrese su contraseña" name="contraseña" value="" class="box" required>
-                 <input type="submit" value="Registrarse" name="registrar" class="btn">
+                 <input type="password" id="password" placeholder="Ingrese su contraseña" name="contraseña" value="" class="box" required>
+                 
+                 <input type="submit" id="confirmar" value="Registrarse" name="registrar" class="btn">
             </form>
         </div>
 
         </body>
         <script src="./assets/js/script.js"></script>
+        <script>
+
+            let btn = document.getElementById("confirmar");
+            btn.addEventListener("click", function(e){ 
+
+                    //function validar(){
+
+                        var contrasena, expresion;
+                        contrasena=document.getElementById("password").value;
+                        var caracteres=0;
+                        var errores=0;
+                        expresion = /\w/;/// a-z // 0 9
+
+                        if(contrasena.length<7){
+                            alert("La contraseña debe tener mas de 7 caracteres");
+                            errores=errores+1;
+                            e.preventDefault();
+                        // return true;
+                        }
+                        //if(!expresion.test(contrasena)){
+                        if(!contrasena.indexOf("*")){///victor*moreno*
+                            alert("Contraseña invalida, recuerde que debe tener una longitud de 8 letras o numeros");
+                        
+                            errores=errores+1;
+                            e.preventDefault();
+                           
+                        }else if(errores=0){
+                            alert("La contraseña se creo con exito y todos los campos estan correctos");
+                            return true;
+                        }
+                
+
+               /*// if(!contrasena.equals(contrasena.toUpperCase())){
+                //    alert("La contraseña debe tener 1 letra minuscula");
+                //}
+                //hola=alert("la contraseña tiene"+caracteres);
+                //return hola;
+                if(contrasena == contrasena.toUpperCase()){
+                    errores=errores+1;
+                }
+                if(contrasena == contrasena.toLowwerCase()){
+                    errores=errores+1;
+                }
+                if(errores>1){
+                    alert("La contraseña es incorrecta");
+                    return true;
+                }*/
+            //}
+        }); 
+
+           /* $(function(){
+
+                var mayus = new RegExp("^(?=.∗[A-Z].∗[A-Z].∗[A-Z])");
+                var special = new RegExp("^(?=.∗[!@#$%&∗].∗[!@#$%&∗].∗[!@#$%&∗)");
+                var numbers = new RegExp("^(?=.∗[0-9])");
+                var lower = new RegExp("^(?=.∗[a-z])");
+                var len = new RegExp("^(?=.{8,})");
+
+                var regExp=[mayus,special,numbers,lower,len];
+               // var elementos=[$("#mayus"),$("#special"),$("#numbers"),$("#lower"),$("#len")];
+                
+                $("#password").on("Keyup", function(){
+                    var pass = $("#password").val();
+                    var check=0;
+                    for(var i=0; i<5; i++){
+                        if(regExp[i].test(pass)){
+                          //  elementos[i].hide();
+                            check++
+                        }else{
+                            //elementos[i].show();
+                        }
+                    }
+                    if(check>=0 && check<=2){
+                        $("#mensaje").text("Contraseña insegura, longitud recomendada 8 caracteres").css("color","red");
+                        $("#confirmar").style.display="none";
+                    }else if(check>=3 && check<=4){
+                        $("#mensaje").text("Contraseña poco insegura, longitud recomendada 8 caracteres").css("color","orange");
+                        $("#confirmar").style.display="none";
+                    }else if(check==5){
+                        $("#mensaje").text("Contraseña Segura").css("color","green")
+                        $("#confirmar").style.display="block";
+                    }
+
+                });
+
+            });*/
+
+
+        </script>
     </head>

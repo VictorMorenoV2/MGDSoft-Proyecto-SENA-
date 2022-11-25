@@ -40,7 +40,7 @@ $email = $_POST['email'];
                     </nav>
                    <div class="ingreso">
                     
-                    <form method="POST" action="cambiar.php">
+                    <form method="POST" action="mailReset.php">
 
                     <input class="recordar" type="email" name="email" placeholder="Ingrese el correo" value="<?php echo $email?>">
                     <input class="recordar" type="password" name="contrasena" placeholder="Ingrese su nueva contraseña">

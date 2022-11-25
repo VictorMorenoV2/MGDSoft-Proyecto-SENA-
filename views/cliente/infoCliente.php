@@ -166,7 +166,7 @@ if(!isset($_SESSION['idUsuario'])){
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>Número de identificación</td>
-                                                                                        <td><input type="number" class="form-control input-sm" name="identificacion" value="<?php echo $identificacion?>" ></td>
+                                                                                        <td><h6><?php echo $identificacion?></h6></td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>Número de celular</td>

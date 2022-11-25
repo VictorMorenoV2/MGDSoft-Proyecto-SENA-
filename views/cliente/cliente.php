@@ -208,7 +208,7 @@ if(!isset($_SESSION['idUsuario'])){
     <label class="side-toggle" for="toggle"><span class="fas fa-bars"></span></label>
 
     <div class="slidebar">
-      <a href="#">
+      <a href="cliente.php">
         <div class="slidebar-menu" id="sidebar">
             <span  class='bx bxs-home' ></span><p>INICIO</p>
         </div>
@@ -217,7 +217,7 @@ if(!isset($_SESSION['idUsuario'])){
        <div class="slidebar-menu">
             <span class='bx bxs-user-detail'></span><p>Información</p>
       </div>  
-       <a href="#">
+       <a href="cliente.php">
        <div class="slidebar-menu">
             <span class="bx bxs-map-pin"></span><p>Citas</p>
         </div>
@@ -396,13 +396,13 @@ if(!isset($_SESSION['idUsuario'])){
                         <small id="helpId" class="form-text text-muted">Finalizacion de su cita</small>
                      </div>
                      <div class="form-group">
-                        <label for="color">Color del texto</label>
-                        <input type="color" class="form-control" name="txtColor" required id="txtColor" value="#ff0000" aria-describedby="helpId" placeholder="Agregar un titulo" required>
+                        <label for="color">Color de fondo</label>
+                        <input type="color" class="form-control" name="txtColor" required id="txtColor" value="#0000" aria-describedby="helpId" placeholder="Agregar un titulo" required>
                         <small id="helpId" class="form-text text-muted">Seleccione un color</small>
                      </div>
                      <div class="form-group">
-                        <label for="color">Color de fondo</label>
-                        <input type="color" class="form-control" name="txtColor2" id="txtColor2" value="#ff0000" aria-describedby="helpId" placeholder="Agregar un titulo" required>
+                        <label for="color">Color del texto</label>
+                        <input type="color" class="form-control" name="txtColor2" id="txtColor2" value="#0000" aria-describedby="helpId" placeholder="Agregar un titulo" required>
                         <small id="helpId" class="form-text text-muted">Seleccione un color</small>
                      </div>
 
