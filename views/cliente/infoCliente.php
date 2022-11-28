@@ -59,10 +59,16 @@ if(!isset($_SESSION['idUsuario'])){
       <a href="infoCliente.php">
        <div class="slidebar-menu">
             <span class='bx bxs-user-detail'></span><p>Información</p>
-      </div>  
+      </div>
+        
        <a href="cliente.php">
        <div class="slidebar-menu">
             <span class="bx bxs-map-pin"></span><p>Citas</p>
+        </div>
+       </a>
+       <a href="productoCliente.php">
+       <div class="slidebar-menu">
+            <span class="bx bxl-shopify"></span><p>Productos</p>
         </div>
        </a>
        <a href="../../contacto.html">

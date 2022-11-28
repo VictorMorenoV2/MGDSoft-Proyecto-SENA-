@@ -712,3 +712,21 @@ body::-webkit-scrollbar-thumb{
     font-weight: 400;
    
 }
+#ag{
+    transform: translateX(50px);
+}
+
+.carta{
+    width: 1500px;
+    height: 1500px;
+    padding-left: 50px;
+}
+
+#cor{
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+#hola{
+    width: 280px;
+    height: 150px;
+}

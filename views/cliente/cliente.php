@@ -222,6 +222,11 @@ if(!isset($_SESSION['idUsuario'])){
             <span class="bx bxs-map-pin"></span><p>Citas</p>
         </div>
        </a>
+       <a href="productoCliente.php">
+       <div class="slidebar-menu">
+            <span class="bx bxl-shopify"></span><p>Productos</p>
+        </div>
+       </a>
        <a href="../../contacto.html">
         <div class="slidebar-menu">
             <span class='bx bx-message-rounded-error' ></span><p>PQR</p>
