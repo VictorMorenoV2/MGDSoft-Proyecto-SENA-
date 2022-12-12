@@ -150,10 +150,10 @@ main{
     gap: 1rem;
     grid-template-areas: 
     "total1 total2 total3 total4 total4"
-    "detail detail detail customer customer"
-    "detail detail detail customer customer"
-    "detail1 detail1 detail1 customer customer"
-    "detail1 detail1 detail1 customer customer";
+    "detail detail detail detail detail"
+    "detail detail detail detail detail"
+    "detail1 detail1 detail1 detail1 detail1"
+    "detail1 detail1 detail1 detail1 detail1";
 
 }
 
@@ -543,7 +543,7 @@ h2 > span{
 /* Estas reglas se aplicarán a todos las elementos i 
 después de cualquier input*/
 .content-input input + i{
-       background: #a51111;
+       background: #970000;
        border:2px solid rgba(0,0,0,0.2);
        position: absolute; 
        left: 0;
@@ -586,7 +586,7 @@ debemos poner definir este valor.
 }
  
 .content-input input[type=checkbox]:checked + i{
- background: #2AC176;
+ background: #001A43;
 }
 
 .content-input input,

@@ -246,17 +246,13 @@ if(!isset($_SESSION['idUsuario'])){
 
                 <div class="detail-foter">
             
-                  <h4 class="mostrar">Mostrar</h4> 
-                  <input type="number" class="numero"> 
-                  <h4 class="mostrar1">registros</h4>
-                  <a class="btn5"><i class='bx bx-chevrons-left' id="ia"></i></a><a class="btn6"><i class='bx bx-chevrons-right' id="ia" ></i></a>
-                </div>
+                     </div>
 
 
 
                 
                 </div>
-               
+           <!--    
             <div class="card customer">
                 <h2>Actividades administrativas</h2>
                 <div class="customer-wrapper">
@@ -295,7 +291,7 @@ if(!isset($_SESSION['idUsuario'])){
                     </div>
                     <p class="customer-date">Hoy</p>
                 </div>
-            </div>
+            </div>-->
 
               <!-- PRODUCTOS INACTIVOS -->
               

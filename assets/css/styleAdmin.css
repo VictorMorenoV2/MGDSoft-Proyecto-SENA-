@@ -558,7 +558,7 @@ h2 > span{
 /* Estas reglas se aplicarán a todos las elementos i 
 después de cualquier input*/
 .content-input input + i{
-       background: #a51111;
+       background: #970000;
        border:2px solid rgba(0,0,0,0.2);
        position: absolute; 
        left: 0;
@@ -601,7 +601,7 @@ debemos poner definir este valor.
 }
  
 .content-input input[type=checkbox]:checked + i{
- background: #2AC176;
+ background: #001A43;
 }
 
 .content-input input,

@@ -196,7 +196,7 @@ if(!isset($_SESSION['idUsuario'])){
                                                                                     </tbody>
                                                                                 </table>
                                                                                 <button type="submit" name="guardar" class="btn btn-sm btn-success"><i class='bx bxs-wrench'></i> Actualizar Información</button>
-                                                                                <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i>Eliminar Cuenta</button>
+                                                                                
                                                                         </div>
                                                              <div class='col-md-12' id="resultados_ajax"></div>
                                             </div>
